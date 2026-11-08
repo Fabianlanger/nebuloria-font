@@ -1,0 +1,21 @@
+REDESIGN of letters that looked too basic. They must be clearly part of the same family as the attached reference sheets (the letters B D E F H L P R T and a b d g there are the approved standard), with the exact stroke sharpness of REFERENCE LANGER v0.2.
+Solid black on plain warm off-white, flat vector look. One single row of separate, isolated letters on one baseline, all at the same size as the references, wide gaps, nothing touching, nothing else in the image.
+
+THE FAMILY'S STROKE TECHNIQUES (every redesigned letter must show them):
+T1 Broad-nib contrast at 45 degrees: strokes moving from top-left to bottom-right are HEAVY, strokes moving from top-right to bottom-left are HAIRLINE thin. Extreme contrast.
+T2 Crisp straight 45-degree chamfer cuts on outer corners and stroke ends (top-left corners of stems, corners of bowls), like the approved B D E P R and the octagonal O.
+T3 Needle-sharp points: every free end tapers to a sharp point or runs out into a long hairline tail along the baseline. Never blunt, never rounded blobs.
+T4 Capitals only: a thin wavy tendril runs alongside the main heavy stroke, starting at the chamfered top-left corner and ending in a small teardrop, exactly like the approved F and H.
+T5 Asymmetric feet: serif feet are longer to the right and taper into hairline tails.
+No sprouts, leaves or extra ornaments except the small leaf inside closed counters (as in the approved B, D, P, R).
+
+PER LETTER:
+- C: bowl with crisp 45-degree chamfers at its top-left and bottom-left outer corners; the top terminal is a sharp beak cut at 45 degrees; the bottom ends in a needle-sharp hairline. Tendril alongside the heavy left curve (T4).
+- G: like C, plus a short heavy vertical spur on the right with a chamfered top and a sharp hairline crossbar; tendril (T4).
+- K: heavy stem with chamfered top-left corner and tendril (T4); the upper arm is a HAIRLINE ending in a sharp chamfered flag; the leg is HEAVY and runs out into a long hairline tail along the baseline.
+- M: chamfered top-left corners; following T1: the left stem and the second diagonal are hairline, the first diagonal (top-left to bottom-right) and the right stem are heavy; tendril only alongside the left stem like H; NO sprout or leaf in the middle.
+- V and W: following T1, the top-left-to-bottom-right diagonals are heavy, the others hairline; chamfered 45-degree flag serifs at the top left; the heavy diagonal has a tendril alongside it ending in a teardrop; the bottom vertex is a needle-sharp point.
+- X: heavy top-left-to-bottom-right diagonal, hairline crossing diagonal; chamfered flag serifs; feet run out into hairline tails.
+- Y: heavy left arm, hairline right arm meeting at x-height-like junction, heavy straight stem below with an asymmetric foot; chamfered flags; tendril alongside the heavy arm.
+- lowercase m, n, u: exactly like the n in REFERENCE LANGER v0.2: a crisp 45-degree chamfered entry spur at the top-left that ends in a needle point, arches that leave the stem as a hairline and become heavy, a crisp chamfered shoulder, heavy straight stems, feet that taper into hairline tails along the baseline. u is the n rotated: chamfered sharp spurs at the top of both stems, hairline join at the bottom-left, tail at the bottom-right.
+- lowercase x: heavy top-left-to-bottom-right diagonal, hairline crossing diagonal, chamfered sharp top flags, feet tapering into hairline tails along the baseline.

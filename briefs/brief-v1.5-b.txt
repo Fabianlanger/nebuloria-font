@@ -1,0 +1,5 @@
+REDESIGN of one lowercase letter: b. Solid black on plain warm off-white, flat vector look, only this one letter, centred, nothing else in the image.
+- STEM AND TERMINAL: copy EXACTLY the stem of the lowercase b in REFERENCE OLD B (the b in the first attached sheet): its tall heavy stem with the thin wavy tendril rising from the top and curling over into a small teardrop terminal, and its sharp chamfered entry at the top-left. Keep that stem and terminal unchanged.
+- BOWL: replace the round bowl with the edgy bowl of REFERENCE NEW B (the b in the second attached sheet): an octagon built from straight lines and crisp 45-degree chamfer cuts, straight vertical right side, flat top and bottom, joined to the stem at the top by a straight 45-degree hairline, with the small sharp leaf inside the counter.
+- Same size, weight, contrast and stroke sharpness as the references (REFERENCE LANGER v0.2 for sharpness).
+Avoid: round bowl curves, blunt ends, colour, extra ornaments.

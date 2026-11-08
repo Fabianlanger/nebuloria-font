@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nebuloria Design Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "Nebuloria"; src: url("../../dist/nebuloria-regular.woff2") format("woff2"); font-display: block; }
+@font-face { font-family: "Nebuloria Hekwerk"; src: url("../../dist/nebuloria-hekwerk-regular.woff2") format("woff2"); font-display: block; }
+@page { size: 200mm 250mm; margin: 0; }
+:root { --ink: #1d1b18; --paper: #f4efe4; --dark: #171717; --yellow: #F9C852; --orange: #F08A3C; --red: #C8302A; --muted: #7a7368; --rule: #d9d1c1; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Poppins, sans-serif; font-weight: 300; color: var(--ink); background: #888; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 200mm; height: 250mm; position: relative; overflow: hidden; background: var(--paper); padding: 18mm 18mm 16mm; page-break-after: always; break-after: page; }
+.page.dark { background: var(--dark); color: #e9e3d6; }
+.neb { font-family: "Nebuloria", serif; font-feature-settings: "dlig" 1; font-weight: normal; line-height: 1.05; }
+.nebh { font-family: "Nebuloria Hekwerk", serif; font-feature-settings: "dlig" 1; }
+.plain { font-feature-settings: "dlig" 0; }
+.y { color: var(--yellow); }
+.grad { background: linear-gradient(100deg, var(--yellow), var(--orange) 60%, var(--red)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kicker { font-weight: 600; font-size: 7.5pt; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 0 0 4mm; }
+.dark .kicker { color: #8f897e; }
+h1, h2 { font-weight: normal; margin: 0; }
+h2.neb { font-size: 34pt; margin-bottom: 6mm; }
+p { font-size: 9.6pt; line-height: 1.6; margin: 0 0 3.2mm; }
+.lead { font-size: 12pt; line-height: 1.55; }
+.cap { font-size: 6.8pt; line-height: 1.4; color: var(--muted); margin-top: 1.6mm; }
+.dark .cap { color: #8f897e; }
+img { display: block; width: 100%; object-fit: cover; }
+body { counter-reset: pg; } .page { counter-increment: pg; } .pgno::after { content: counter(pg); }
+.folio { position: absolute; bottom: 8mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.rule-no { font-family: "Nebuloria"; font-size: 15pt; color: var(--orange); }
+.glyphbox { background: #fbf8f1; border: 0.3mm solid var(--rule); border-radius: 2mm; display: flex; align-items: center; justify-content: center; }
+.dark .glyphbox { background: #1f1f1f; border-color: #2e2e2e; }
+table { border-collapse: collapse; width: 100%; font-size: 8.2pt; }
+td, th { text-align: left; vertical-align: top; padding: 1.6mm 3mm 1.6mm 0; border-bottom: 0.25mm solid var(--rule); }
+th { font-weight: 600; font-size: 6.8pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.dark td, .dark th { border-color: #2e2e2e; }
+code { font-family: Consolas, monospace; font-size: 7.8pt; background: rgba(0,0,0,.06); padding: .2mm 1mm; border-radius: 1mm; }
+.dark code { background: rgba(255,255,255,.08); }
+pre { font-family: Consolas, monospace; font-size: 7.4pt; line-height: 1.5; background: #1f1f1f; color: #e9e3d6; padding: 4mm; border-radius: 2mm; white-space: pre-wrap; }
+.avoid li { font-size: 10pt; line-height: 1.7; }
+.toc td { font-size: 9.6pt; border: 0; padding: 1mm 0; }
+.toc td:last-child { text-align: right; color: var(--muted); }
+@media screen { .page { margin: 6mm auto; box-shadow: 0 2mm 6mm rgba(0,0,0,.3); } }
+.cover .kicker, .cover .cap { color: #c9bfa9 !important; }
+.cover .neb { text-shadow: 0 .6mm 3mm rgba(0,0,0,.5); } .cover p { text-shadow: 0 .4mm 2.5mm rgba(0,0,0,.7); color: #f1e9d8 !important; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="page dark cover" style="display:flex;flex-direction:column;justify-content:flex-start;background:linear-gradient(180deg, rgba(22,13,8,.55) 0%, rgba(22,13,8,.35) 40%, rgba(22,13,8,0) 60%), linear-gradient(0deg, rgba(22,13,8,.45) 0%, rgba(22,13,8,0) 18%), url(img/cover-bg.jpg) center/cover no-repeat, #121410">
+  <div class="kicker" style="margin-top:6mm">A display typeface · Version 1.5 · 2026</div>
+  <div style="margin-top:10mm">
+    <h1 class="neb" style="font-size:92pt;color:#f1e9d8;text-shadow:0 1mm 6mm rgba(0,0,0,.45)">Nebuloria</h1>
+    <p class="lead" style="max-width:120mm;margin-top:8mm;color:#e9e3d6">Where Victorian iron and glass meet the translucent futurism of the year 2000: an elegant, solarpunk typeface. A design book about how it was found, word by word.</p>
+  </div>
+  <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end">
+    <div class="neb" style="font-size:30pt;color:#e9e3d6">Fabian Langer</div>
+    <div class="cap" style="text-align:right">Free to use under the<br>SIL Open Font License 1.1</div>
+  </div>
+</section>
+
+<!-- 2 CONTENTS + WHY -->
+<section class="page">
+  <div class="kicker">Contents</div>
+  <table class="toc" style="width:80mm;margin-bottom:12mm">
+    <tr><td>Why Nebuloria</td><td>2</td></tr>
+    <tr><td>Two worlds, one letter</td><td>3</td></tr>
+    <tr><td>A name for the blend: solarpunk</td><td>6</td></tr>
+    <tr><td>Six principles</td><td>7</td></tr>
+    <tr><td>Using the font</td><td>14</td></tr>
+    <tr><td>The alphabet</td><td>16</td></tr>
+    <tr><td>Windows, wires and the iron fence</td><td>18</td></tr>
+    <tr><td>Nebuloria in use</td><td>20</td></tr>
+    <tr><td>How it was made</td><td>23</td></tr>
+        <tr><td>Credits</td><td>25</td></tr>
+  </table>
+  <h2 class="neb">Why Nebuloria</h2>
+  <div class="cols">
+    <div>
+      <p class="lead">Nebuloria began as a signature: a name for a website that needed one human, crafted moment between calm, geometric text.</p>
+      <p>The brief was a feeling, not a font. Victorian conservatories, where cast iron carries glass and plants climb the columns. And the see-through electronics of the late nineties, where you could look into a telephone and see its wires. And the futurism of that same moment: organic, aerodynamic shapes from aerospace, and the straight lines of microchips. Eras that all made structure visible, and that together describe an optimistic, green and elegant future: refined solarpunk.</p>
+    </div>
+    <div>
+      <p>The typeface was not drawn by hand. It was <em>directed</em>: by learning the language of type design, turning a mood into precise rules, and letting AI models draw and redraw until the rules held. Every principle in this book started as a sentence.</p>
+      <p>Nebuloria is a display face. It is made for large sizes: wordmarks, headlines, pull quotes. It comes in two styles: <b>Regular</b>, calm and readable, and <b>Hekwerk</b> (Dutch for "iron fence"), which opens a window between every pair of upright stems.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Nebuloria</span><span class="pgno"></span></div>
+</section>
+
+<!-- 3 TWO WORLDS -->
+<section class="page">
+  <div class="kicker">Two worlds, one letter</div>
+  <h2 class="neb">Iron and glass</h2>
+  <img src="img/insp/crystalpalace.jpg" style="height:78mm" alt="Crystal Palace interior, 1851">
+  <div class="cap">The Crystal Palace, London, 1851. Lithograph by J. McNeven. Public domain.</div>
+  <div class="cols" style="margin-top:6mm">
+    <div>
+      <img src="img/insp/palmhouse.jpg" style="height:52mm" alt="Palm House, Kew">
+      <div class="cap">Palm House, Royal Botanic Gardens, Kew. Photo: Daniel Case, CC BY-SA 3.0.</div>
+    </div>
+    <div>
+      <p class="lead">The Victorians built cathedrals for plants: heavy iron ribs carrying hair-thin glazing bars, and between them glass.</p>
+      <p>From this world Nebuloria takes its <b>structure</b>: heavy strokes next to hairlines, scrolls that grow from the line, the octagon and the 45° cut. Not its shine: no gold, no chrome, no metallic effects.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Two worlds</span><span class="pgno"></span></div>
+</section>
+
+<section class="page dark">
+  <div class="kicker">Two worlds, one letter</div>
+  <h2 class="neb y">See-through</h2>
+  <div class="cols">
+    <div>
+      <img src="img/insp/phone.jpg" style="height:64mm" alt="Transparent telephone">
+      <div class="cap">Transparent telephone with visible wiring. Photo: Ellinor Algin / Swedish National Museum of Science and Technology, CC BY 4.0.</div>
+    </div>
+    <div>
+      <img src="img/insp/imac.jpg" style="height:64mm" alt="iMac G3">
+      <div class="cap">iMac G3, translucent Bondi blue, 1998. Photo: katz2110 (Flickr), CC BY 2.0.</div>
+    </div>
+  </div>
+  <div class="cols" style="margin-top:8mm">
+    <div>
+      <p class="lead">Around the year 2000, electronics turned transparent. The casing became a window, and the circuit inside became decoration.</p>
+      <p>A font cannot be transparent: it is one colour. So translucency had to become <b>form</b>: hairlines, open glass panes, wires that run behind a stroke and show through it.</p>
+    </div>
+    <div>
+      <img src="img/insp/nautilus.jpg" style="height:62mm;object-position:top" alt="Nautilus salon engraving">
+      <div class="cap">Fiction got there first: the salon of the Nautilus in Jules Verne's <i>Twenty Thousand Leagues Under the Seas</i> (1870), a Victorian future of iron, glass and engineering. Engraving by A. de Neuville and É. Riou. Public domain.</div>
+    </div>
+  </div>
+  <div class="folio"><span>Two worlds</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Two worlds, one letter</div>
+  <h2 class="neb">Future forms</h2>
+  <img src="img/insp/aero.jpg" style="height:76mm" alt="Blended wing body aircraft concept">
+  <div class="cap">Blended-wing-body aircraft concept. NASA / The Boeing Company, public domain.</div>
+  <div class="cols" style="margin-top:6mm">
+    <div>
+      <p class="lead">Y2K futurism was organic and aerodynamic: one surface that swells, carries its weight and tapers out to a sharp edge.</p>
+      <p>That is the <b>weight profile</b> of every Nebuloria stroke: full and heavy, then running out into a needle point, like a wing into its tip.</p>
+      <p>Its other half is the microchip: <b>straight lines</b>, right angles and 45° turns, packed with precision. From it come the chamfered corners, the windows and the glare lines.</p>
+    </div>
+    <div>
+      <img src="img/insp/die.jpg" style="height:74mm" alt="Integrated circuit die">
+      <div class="cap">Die of an integrated circuit: straight lines and 45° routing. Photo: Cole L, CC BY-SA 2.0.</div>
+    </div>
+  </div>
+  <div class="folio"><span>Two worlds</span><span class="pgno"></span></div>
+</section>
+
+<section class="page dark">
+  <div class="kicker">A name for the blend</div>
+  <h2 class="neb y">Solarpunk</h2>
+  <div class="cols">
+    <div>
+      <p class="lead" style="color:#e9e3d6">Put the three together: the Victorian glasshouse, transparent technology and organic engineering. What you get is a future where technology and nature grow into each other.</p>
+      <p>That future has a name: <b>solarpunk</b>. Nebuloria speaks its <b>elegant</b> dialect: not makeshift or rustic, but refined, crafted and precise. Quiet luxury in glass, iron and green. Solar glass in an orangery roof, vines on slender frames, cables and roots running side by side.</p>
+      <p>It is a natural fit for high-end solarpunk worlds: botanical restaurants and hotels, wayfinding for gardens and museums, fine publishing, perfume and tea, games and film titles that imagine a hopeful, beautifully made future.</p>
+    </div>
+    <div>
+      <img src="img/mockups/08-solarpunk-anthology.jpg" style="height:112mm" alt="Solarpunk anthology mockup">
+      <div class="cap">A linen-bound solarpunk anthology.</div>
+    </div>
+  </div>
+  <img src="img/mockups/07-solarpunk-glasshouse.jpg" style="height:66mm;margin-top:5mm" alt="Solarpunk glasshouse sign mockup">
+  <div class="cap">The Orangery: wayfinding for a botanical salon under solar glass.</div>
+  <div class="folio"><span>Solarpunk</span><span class="pgno"></span></div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="page">
+  <div class="kicker">Six principles · 1</div>
+  <h2 class="neb">Heavy and hairline</h2>
+  <div class="cols">
+    <div>
+      <img src="img/insp/nibs.jpg" style="height:56mm" alt="Pen nibs">
+      <div class="cap">Broad-edged and pointed nibs. Photo: R. Henrik Nilsson, CC BY 4.0.</div>
+      <p style="margin-top:5mm">Every main stroke behaves as if drawn with a <b>broad nib held at 45°</b>: strokes from top-left to bottom-right are heavy, strokes from top-right to bottom-left are hair-thin. It is the same contrast as iron ribs against glazing bars.</p>
+      <table style="margin-top:3mm">
+        <tr><th>Measure</th><th>Units (of 1000)</th></tr>
+        <tr><td>Lowercase stem</td><td>≈ 112</td></tr>
+        <tr><td>Thinnest hairline</td><td>≈ 13</td></tr>
+        <tr><td>Contrast</td><td>≈ 8 : 1</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="glyphbox" style="height:110mm"><span class="neb plain" style="font-size:150pt">nH</span></div>
+      <div class="cap">Heavy stems, hairline arches. The thick parts carry the weight, the hairlines carry the elegance.</div>
+    </div>
+  </div>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Six principles · 2</div>
+  <h2 class="neb">The stroke pair</h2>
+  <div class="cols">
+    <div>
+      <img src="img/insp/gate.jpg" style="height:118mm" alt="Wrought iron gate">
+      <div class="cap">Wrought-iron gate. Photo: MauraWen, CC BY 4.0.</div>
+    </div>
+    <div>
+      <div class="glyphbox" style="height:70mm"><span class="neb plain" style="font-size:120pt">FH</span></div>
+      <p style="margin-top:5mm">In a wrought-iron gate, thin scrolls grow alongside the heavy bars. In Nebuloria every capital is a <b>stroke pair</b>: a heavy stroke and a thin, wavy <b>tendril</b> that starts at the same chamfered corner and runs beside it, ending in a small teardrop.</p>
+      <p>The two have <b>mirrored weight</b>: the main stroke is heavy and tapers to a needle point; the tendril is a hairline that swells slightly at its end.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Six principles · 3</div>
+  <h2 class="neb">Forty-five degrees</h2>
+  <img src="img/insp/bandstand.jpg" style="height:72mm" alt="Octagonal bandstand">
+  <div class="cap">Octagonal cast-iron bandstand. Photo: Rodhullandemu, CC BY-SA 4.0.</div>
+  <div class="cols" style="margin-top:6mm">
+    <div class="glyphbox" style="height:62mm"><span class="neb plain" style="font-size:100pt">Cbmn</span></div>
+    <div>
+      <p class="lead">Where a classic letter has a round corner, Nebuloria has a straight cut at 45°.</p>
+      <p>Bowls and arches are built like the Victorian octagon: straight sides joined by <b>chamfers</b>. The cut is where the stroke turns thin. Diagonals and curls only travel one way, from north-east to south-west, the direction of the pen.</p>
+      <p>This is also where the Y2K world comes in: the chamfer is the bevelled edge of moulded plastic and the 45° route of a circuit trace.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page dark">
+  <div class="kicker">Six principles · 4</div>
+  <h2 class="neb y">A leaf in the counter</h2>
+  <div class="cols">
+    <div>
+      <img src="img/insp/leaf.jpg" style="height:66mm" alt="Backlit leaf">
+      <div class="cap">Backlit leaf. Photo: Jon Sullivan, public domain.</div>
+      <p style="margin-top:5mm">A conservatory is a house for plants, so the plants are inside the letters. In every closed bowl (a, b, d, g, o, p, q) one small leaf grows from the inside of the stroke into the counter.</p>
+      <p><b>Botanical, not floral</b>: the leaf grows from the stroke. Nothing is stuck on top, and there are no flowers.</p>
+    </div>
+    <div class="glyphbox" style="height:150mm"><span class="neb plain y" style="font-size:130pt;line-height:1.1;text-align:center">ab<br>dg</span></div>
+  </div>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Six principles · 5</div>
+  <h2 class="neb">The window</h2>
+  <div class="cols">
+    <div>
+      <img src="img/insp/kibble.jpg" style="height:60mm" alt="Kibble Palace dome">
+      <div class="cap">Dome of the Kibble Palace, Glasgow. Photo: Lib79, CC BY-SA 4.0.</div>
+      <img src="img/insp/pcb.jpg" style="height:36mm;margin-top:4mm" alt="Printed circuit board">
+      <div class="cap">Printed circuit board with 45° traces. Photo: Mister rf, CC BY-SA 4.0.</div>
+    </div>
+    <div>
+      <div class="glyphbox" style="height:72mm"><span class="neb" style="font-size:150pt">an</span></div>
+      <p style="margin-top:5mm">When a letter ending in an upright stem meets a letter starting with one (as in <i>an</i>, <i>il</i>, <i>hu</i>), the two stems are joined by thin bridges and enclose a new counter: a <b>window</b>.</p>
+      <p>Inside, three short 45° lines. They read twice: as the glare on a pane of glass, and as circuit traces seen through clear plastic. One shape, both worlds.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Six principles · 6</div>
+  <h2 class="neb">The wire: cable and vine</h2>
+  <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:5mm">
+    <div><img src="img/insp/liana.jpg" style="height:60mm" alt="Hanging liana"><div class="cap">Liana in a rainforest. Photo: Dick Culbert, CC BY 2.0.</div></div>
+    <div>
+      <img src="img/insp/bondwires.jpg" style="height:28mm" alt="Chip bond wires"><div class="cap">Bond wires connecting a chip. Photo: Zephyris, CC BY-SA 3.0.</div>
+      <img src="img/insp/ribbon.jpg" style="height:22mm;margin-top:2mm" alt="Ribbon cable"><div class="cap">Ribbon cable. Photo: Retired electrician, CC0.</div>
+    </div>
+  </div>
+  <div class="glyphbox" style="height:52mm;margin-top:5mm"><span class="neb" style="font-size:90pt">Langer</span></div>
+  <p style="margin-top:5mm;max-width:160mm">Between some letters a thin <b>wire</b> grows: from the top-right of one letter, hanging in a soft round curve, into the top-left of the next. It is a vine and a cable at once: the liana on the conservatory column and the wire inside the transparent phone. Above all, it <b>connects</b>: letters into words, and the two worlds into one.</p>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page dark">
+  <div class="kicker">And what Nebuloria is not</div>
+  <h2 class="neb y">Leave out</h2>
+  <ul class="avoid">
+    <li>Metallic effects, chrome, gloss, gold. The iron is structure, not shine.</li>
+    <li>Flowers or leaves stuck on top of letters. Everything grows from the stroke.</li>
+    <li>Fairy-tale "vine lettering". Lianas are rare and precise.</li>
+    <li>Art deco and blackletter. The 45° cut is a detail, not a costume.</li>
+    <li>Uniform, monolinear strokes. Contrast is the backbone.</li>
+    <li>Round, soft blobs. Every end is a needle point, a teardrop or a crisp cut.</li>
+    <li>Small sizes. Nebuloria starts at 40 px; its details need 72 px and up.</li>
+  </ul>
+  <div class="folio"><span>Principles</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Using the font</div>
+  <h2 class="neb">Set it free</h2>
+  <p class="lead">Nebuloria is free for everyone, for personal and commercial work. Here is how to get it and use it, no technical knowledge needed.</p>
+  <div class="cols">
+    <div>
+      <h3 style="font-weight:600;font-size:9.5pt;margin:2mm 0">1 · Download</h3>
+      <p>Go to <b>github.com/Fabianlanger/nebuloria-font</b> and download the <b>newest</b> Nebuloria zip file (at the time of writing <b>Nebuloria-v1.5.zip</b>; newer versions add more characters). Unzip the file (double-click it).</p>
+      <h3 style="font-weight:600;font-size:9.5pt;margin:2mm 0">2 · Install</h3>
+      <p><b>Windows:</b> open the folder <i>fonts/otf</i>, right-click both files and choose <b>Install</b>.<br><b>Mac:</b> double-click each file and click <b>Install Font</b>.</p>
+      <p>Both styles now appear in your font menu: <b>Nebuloria</b> and <b>Nebuloria Hekwerk</b>.</p>
+      <h3 style="font-weight:600;font-size:9.5pt;margin:2mm 0">3 · Use</h3>
+      <p>Pick Nebuloria in Word, PowerPoint, Keynote, Pages, Figma, Photoshop or Illustrator. Use it big: titles, names, posters, covers. Set the rest of your text in a calm, simple font.</p>
+    </div>
+    <div>
+      <h3 style="font-weight:600;font-size:9.5pt;margin:2mm 0">Windows and wires</h3>
+      <p>The glass windows and hanging wires are a hidden extra called <b>discretionary ligatures</b>. Switch them on where your app allows it:</p>
+      <table>
+        <tr><th>App</th><th>Where</th></tr>
+        <tr><td>Word</td><td>Font › Advanced › Ligatures: <i>All</i></td></tr>
+        <tr><td>Figma</td><td>Type settings › Details › Discretionary ligatures</td></tr>
+        <tr><td>Illustrator, InDesign</td><td>OpenType panel › Discretionary Ligatures</td></tr>
+        <tr><td>Photoshop</td><td>Character panel › OpenType › Discretionary Ligatures</td></tr>
+      </table>
+      <p>For the iron fence, choose the style <b>Nebuloria Hekwerk</b>. Apps without these options show the clean letters, which still look great.</p>
+      <h3 style="font-weight:600;font-size:9.5pt;margin:2mm 0">On a website</h3>
+      <p>Use the files in <i>fonts/webfonts</i>. Web developers: see the next page.</p>
+      <p class="cap">Licence: SIL Open Font License 1.1. Use, share, embed and change it freely; just don't sell the font on its own. Letters A–Z and a–z; figures and punctuation follow in a next version.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Using</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Using the font · for developers and designers</div>
+  <h2 class="neb">Under the hood</h2>
+  <p>For websites, apps and design tools that read OpenType features directly.</p>
+<pre style="font-family:Consolas,monospace;font-size:7.6pt;line-height:1.5;background:#1f1f1f;color:#e9e3d6;padding:4mm;border-radius:2mm;white-space:pre-wrap">@font-face {
+  font-family: "Nebuloria";
+  src: url("nebuloria-regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nebuloria Hekwerk";
+  src: url("nebuloria-hekwerk-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+.wordmark { font-family: "Nebuloria", serif; font-feature-settings: "dlig" 1; }
+.headline { font-family: "Nebuloria", serif; }              /* extras off */
+.fence    { font-family: "Nebuloria", serif; font-feature-settings: "dlig" 1, "ss01" 1; }</pre>
+  <table>
+    <tr><th>Feature</th><th>Nebuloria (Regular)</th><th>Nebuloria Hekwerk</th></tr>
+    <tr><td><code>dlig</code></td><td>Wires + at most one window per word</td><td>Wires + a window in every pair of stems</td></tr>
+    <tr><td><code>ss01</code></td><td>A window in every pair</td><td>Back to one window per word</td></tr>
+  </table>
+  <table style="margin-top:4mm">
+    <tr><th>Size</th><th>Use</th></tr>
+    <tr><td>72 px and up</td><td>Wordmarks, pull quotes, with <code>dlig</code></td></tr>
+    <tr><td>40–72 px</td><td>Headlines, <code>dlig</code> off or sparing</td></tr>
+    <tr><td>below 40 px</td><td>Use a text face</td></tr>
+  </table>
+  <table style="margin-top:4mm">
+    <tr><th>Metric</th><th>Value</th><th>Metric</th><th>Value</th></tr>
+    <tr><td>Units per em</td><td>1000</td><td>x-height</td><td>500</td></tr>
+    <tr><td>Cap height</td><td>700</td><td>Ascender / descender</td><td>904 / −339</td></tr>
+  </table>
+  <p class="cap">Windows appear between a letter ending in a stem (a d h i l m n u) and a letter starting with one (b h i k l m n p r u). Wires connect Fa, La, ng, er, re, ce, ge. Source code and build scripts are in the GitHub repository.</p>
+  <div class="folio"><span>Using</span><span class="pgno"></span></div>
+</section>
+
+
+
+<!-- ALPHABET -->
+<section class="page dark">
+  <div class="kicker">The alphabet · capitals</div>
+  <div class="neb plain y" style="font-size:58pt;line-height:1.28;letter-spacing:.02em;margin-top:8mm">ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ</div>
+  <p style="position:absolute;bottom:22mm;left:18mm;right:18mm;max-width:150mm">Capitals carry the most ornament: every stem a stroke pair, a chamfered flag at the top-left, and an asymmetric foot that runs out into a hairline.</p>
+  <div class="folio"><span>Alphabet</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">The alphabet · lowercase</div>
+  <div class="neb plain" style="font-size:62pt;line-height:1.3;margin-top:8mm">abcdefg<br>hijklmn<br>opqrstu<br>vwxyz</div>
+  <table style="position:absolute;bottom:22mm;left:18mm;width:164mm">
+    <tr><th>Metric</th><th>Value</th><th>Metric</th><th>Value</th></tr>
+    <tr><td>Units per em</td><td>1000</td><td>Cap height</td><td>700</td></tr>
+    <tr><td>x-height</td><td>500</td><td>Glyphs</td><td>A–Z, a–z + ligatures</td></tr>
+  </table>
+  <div class="folio"><span>Alphabet</span><span class="pgno"></span></div>
+</section>
+
+<!-- LIGATURES -->
+<section class="page">
+  <div class="kicker">Windows, wires and the iron fence</div>
+  <h2 class="neb">Two styles</h2>
+  <div class="cap" style="margin-bottom:2mm">Discretionary ligatures off</div>
+  <div class="neb plain" style="font-size:50pt">Fabian Langer illumination</div>
+  <div class="cap" style="margin:6mm 0 2mm">Nebuloria Regular · <code>dlig</code> on: wires, and at most one window per word</div>
+  <div class="neb" style="font-size:50pt">Fabian Langer illumination</div>
+  <div class="cap" style="margin:6mm 0 2mm">Nebuloria Hekwerk · <code>dlig</code> on: a window in every pair, the iron fence</div>
+  <div class="nebh" style="font-size:50pt;line-height:1.05">Fabian Langer illumination</div>
+  <p style="margin-top:8mm">Both styles contain both behaviours: <code>ss01</code> switches Regular to the fence and Hekwerk back to one window per word. Wires connect <i>Fa, La, ng, er, re, ce, ge</i>.</p>
+  <div class="folio"><span>Ligatures</span><span class="pgno"></span></div>
+</section>
+
+<section class="page dark">
+  <div class="kicker">Specimen</div>
+  <div class="neb y" style="font-size:72pt">Fabian Langer</div>
+  <div class="neb" style="font-size:40pt;margin-top:8mm;color:#e9e3d6">From strategy to <span class="grad">solutions</span></div>
+  <div class="neb" style="font-size:30pt;margin-top:8mm;color:#e9e3d6">Not everything that adapts, learns.</div>
+  <div class="neb" style="font-size:22pt;margin-top:8mm;color:#e9e3d6">Confusing concepts make for crippling policy</div>
+  <p style="position:absolute;bottom:22mm;left:18mm;max-width:150mm">Designed to be filled with colour and gradients: the hairlines are strong enough for a yellow-to-red gradient at 40 px and above.</p>
+  <div class="folio"><span>Specimen</span><span class="pgno"></span></div>
+</section>
+
+<!-- MOCKUPS -->
+<section class="page">
+  <div class="kicker">Nebuloria in use</div>
+  <img src="img/mockups/01-website.jpg" style="height:110mm" alt="Website mockup">
+  <div class="cap">The wordmark in a website hero (role R1), with Poppins for text.</div>
+  <img src="img/mockups/02-business-card.jpg" style="height:86mm;margin-top:5mm" alt="Business card mockup">
+  <div class="cap">Letterpress business card, warm yellow ink on black cotton paper.</div>
+  <div class="folio"><span>In use</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Nebuloria in use</div>
+  <div class="cols">
+    <div><img src="img/mockups/04-glass-door.jpg" style="height:150mm" alt="Etched glass door"><div class="cap">Acid-etched into the door of a glasshouse: the font back in its own world.</div></div>
+    <div><img src="img/mockups/05-poster-column.jpg" style="height:150mm" alt="Poster on advertising column"><div class="cap">Event poster on a cast-iron advertising column (roles R2 and R3).</div></div>
+  </div>
+  <div class="folio"><span>In use</span><span class="pgno"></span></div>
+</section>
+
+<section class="page dark">
+  <div class="kicker">Nebuloria in use</div>
+  <img src="img/mockups/03-essay-cover.jpg" style="height:92mm" alt="Essay cover">
+  <div class="cap">A cloth-bound essay cover: pull quote as title (role R3).</div>
+  <img src="img/mockups/06-acrylic.jpg" style="height:86mm;margin-top:5mm" alt="Translucent acrylic object">
+  <div class="cap">Nebuloria Hekwerk on a translucent Y2K-style case: the windows meet the real circuit board.</div>
+  <p class="cap" style="margin-top:5mm">Mockup scenes are AI-generated. The lettering was set in the real font and placed into each scene; small deviations from the font are possible in the generated images.</p>
+  <div class="folio"><span>In use</span><span class="pgno"></span></div>
+</section>
+
+<!-- PROCESS -->
+<section class="page">
+  <div class="kicker">How it was made · 1</div>
+  <h2 class="neb">From words to letters</h2>
+  <p style="max-width:150mm">Nebuloria was designed by learning the vocabulary of type design and using it to direct AI. Each round followed one loop: <b>learn a term → write a rule → render with an image model → judge → refine the rule</b>.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin-top:5mm">
+    <div><img src="img/process/v01-F.jpg" style="height:44mm"><div class="cap">v0.1 · The first F: "stroke pairs", "leaf terminals".</div></div>
+    <div><img src="img/process/v01-fabian-green.jpg" style="height:44mm"><div class="cap">v0.1 · Too many leaves; the model drifts to fairy-tale lettering.</div></div>
+    <div><img src="img/process/v02-fabian.jpg" style="height:44mm"><div class="cap">v0.2 · "Chamfers" without a dose: everything becomes angular.</div></div>
+    <div><img src="img/process/v02-langer.jpg" style="height:44mm"><div class="cap">v0.2 · Langer: the sharpness that became the standard.</div></div>
+    <div><img src="img/process/v03-an.jpg" style="height:44mm"><div class="cap">v0.3 · The window ligature, defined for letter classes.</div></div>
+    <div><img src="img/process/v04-langer.jpg" style="height:44mm"><div class="cap">v0.4 · The target image.</div></div>
+  </div>
+  <p style="margin-top:6mm;max-width:150mm">The biggest lesson: <b>words have a dose</b>. "Chamfered corners" without a limit means "everywhere"; "at most one small leaf" means "none". A precise brief says what, how much and where.</p>
+  <div class="folio"><span>Process</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">How it was made · 2</div>
+  <h2 class="neb">From images to a font</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm">
+    <div><img src="img/process/sheet-lc1.jpg" style="height:38mm"><div class="cap">1 · Glyph sheets: one row of letters per image.</div></div>
+    <div><img src="img/process/sheet-bmn.jpg" style="height:38mm"><div class="cap">2 · Letters that felt too basic were redrawn with stricter rules.</div></div>
+    <div><img src="img/process/wire-ref.jpg" style="height:38mm"><div class="cap">3 · For wires, the real letters were rendered in grey…</div></div>
+    <div><img src="img/process/wire-drawn.jpg" style="height:38mm"><div class="cap">4 · …and only the black wire was drawn on top and extracted.</div></div>
+  </div>
+  <p style="margin-top:6mm">Every letter was cut from its sheet, traced into vector outlines, set on a shared baseline and x-height, and built into an OpenType font with Python (fontTools). Spacing is measured from each letter's heavy body, so tendrils and tails may reach into their neighbours. Windows and wires are OpenType rules, so they appear by themselves while typing.</p>
+  <table>
+    <tr><th>Version</th><th>Change</th></tr>
+    <tr><td>1.0</td><td>First full alphabet from the glyph sheets</td></tr>
+    <tr><td>1.1</td><td>C G K M V W X Y and m n u x redrawn with the family's stroke techniques</td></tr>
+    <tr><td>1.2</td><td>45° chamfers instead of round curves for C, b, m, n</td></tr>
+    <tr><td>1.3–1.4</td><td>Windows and wires; calmer windows, round lianas</td></tr>
+    <tr><td>1.5</td><td>Baseline fixes, final b and F, two styles: Regular and Hekwerk</td></tr>
+  </table>
+  <div class="folio"><span>Process</span><span class="pgno"></span></div>
+</section>
+
+<!-- USING -->
+
+
+<!-- CREDITS -->
+<section class="page dark">
+  <div class="kicker">Credits</div>
+  <h2 class="neb y">With thanks</h2>
+  <p>Typeface, art direction and rules: Fabian Langer, 2026. Drawn with AI image models and built with open-source tools (vtracer, fontTools).</p>
+  <div class="kicker" style="margin-top:6mm">Photographs and illustrations</div>
+  <!-- CREDITS-TABLE -->
+  <p class="cap" style="margin-top:6mm">All photographs from Wikimedia Commons, used under the licences listed. CC BY-SA images are reproduced unaltered except for cropping. Mockup scenes are AI-generated.</p>
+  <div class="folio"><span>Credits</span><span class="pgno"></span></div>
+</section>
+
+</body>
+</html>

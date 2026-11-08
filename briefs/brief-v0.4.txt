@@ -1,0 +1,8 @@
+TARGET STYLE v0.4 (final direction). Display typeface specimen, solid black letterforms on a plain warm off-white background, flat vector look: no colour, no texture, no 3D, no shadow.
+
+Two attached reference images define the style:
+- REFERENCE A (Langer v0.2) defines the LOWERCASE exactly: rounded bowls with a few 45-degree chamfered outer corners, heavy straight stems, feet and strokes tapering into long hairline tails along the baseline, thin wavy tendril wires that end in a small teardrop, a small leaf inside the counter of a, b, g. Copy these lowercase shapes as closely as possible.
+- REFERENCE B (Fabian v0.3) defines the CAPITALS and the WINDOW LIGATURE: each capital is a heavy stroke with a thin wavy tendril running alongside it, starting at a 45-degree chamfered top-left corner, asymmetric foot longer to the right.
+
+Window ligature (discretionary ligature): when a letter with a vertical stem on its right (a, d, h, i, l, m, n, u) is followed by a letter with a vertical stem on its left (b, h, i, k, l, m, n, p, r, u), the two stems are joined by a thin bridge at x-height and a thin bridge at the baseline, enclosing a narrow window with chamfered inner corners. Inside each window: exactly three short parallel hairlines at 45 degrees (lower-left to upper-right) in the top-left inner corner and three in the bottom-right inner corner, like glass panes in a Victorian conservatory and circuit traces under translucent plastic. Keep windows narrow and bridges thin so each letter stays readable. Runs like "ili" become a row of windows, like an iron fence.
+Avoid: colour, fairy-tale vine lettering, leaves on top of strokes, blackletter, art deco, gold. Do not add a tendril wave over every lowercase letter; tendrils only where Reference A has them.

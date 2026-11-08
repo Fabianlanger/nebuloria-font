@@ -1,0 +1,7 @@
+Goal: the word "Fabian" as the matching companion of the word "Langer" in REFERENCE C, so that "Fabian Langer" looks like one typeface.
+Display typeface, solid black on plain warm off-white, flat vector look, no colour, no texture, no 3D, no shadow. Same scale, stroke weight, contrast, x-height and baseline treatment as REFERENCE C.
+- CAPITAL F: copy the capital F of REFERENCE A (Fabian v0.2): 45-degree chamfered corners, heavy stem with a thin wavy tendril alongside it ending in a teardrop, chamfered arm ends.
+- LOWERCASE a, b, i, a, n: draw them exactly in the lowercase style of REFERENCE C (Langer v0.4): rounded bowls with a few 45-degree chamfered outer corners, heavy straight stems, strokes tapering into long hairline tails along the baseline, a small leaf inside the counter of a and b, tendril wires only where they connect letters. Reuse the a and n of REFERENCE C as literally as possible.
+- WINDOWS: on "ab" and on "an", join the two stems with thin bridges at x-height and baseline, enclosing a narrow window exactly like the "an" window in REFERENCE C and REFERENCE B (Langer v0.3): chamfered inner corners and three short 45-degree hairlines in the top-left and in the bottom-right inner corner.
+- The i has a small diamond dot.
+Avoid: a tendril wave over every letter, colour, fairy-tale vine lettering, blackletter lowercase, art deco, gold.

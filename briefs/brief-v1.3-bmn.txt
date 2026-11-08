@@ -1,0 +1,9 @@
+REDESIGN of three lowercase letters: b, m, n. Same typeface, same size, same stroke sharpness as the attached references (REFERENCE LANGER v0.2 for sharpness; the approved octagonal lowercase o, a, d and the current m, n entry spurs and feet).
+Solid black on plain warm off-white, flat vector look. One single row of three separate, isolated letters on one baseline, wide gaps, nothing touching, nothing else in the image.
+
+THE KEY CHANGE: NO ROUND ARCHES AND NO ROUND BOWLS. Build every curve from STRAIGHT lines joined by crisp 45-degree CHAMFER CUTS, exactly like the octagonal lowercase o in the reference: where a normal letter has a round corner, this letter has a straight diagonal 45-degree cut. The chamfer cuts lead into the hairlines: the stroke becomes hair-thin exactly where it turns through the 45-degree cut, and heavy on the straight verticals.
+
+- n: heavy straight left stem with the crisp chamfered entry spur at the top-left ending in a needle point (keep it). The arch leaves the stem as a straight HAIRLINE rising at 45 degrees, then runs as a short straight horizontal top, then turns down through a crisp 45-degree chamfer cut into a heavy straight right stem. No rounded shoulder anywhere. Feet taper into hairline tails along the baseline.
+- m: the same construction as n, twice: two straight 45-degree hairline arches with flat tops and crisp chamfered shoulders, three heavy straight stems, same entry spur and tapering feet.
+- b: tall heavy straight stem with a crisp 45-degree chamfered top-left corner. The bowl is an octagon like the lowercase o: straight vertical right side, crisp 45-degree chamfers at its top-right and bottom-right corners, flat straight top and bottom; it joins the stem at the top through a straight 45-degree HAIRLINE. Keep the small sharp leaf inside the counter.
+Avoid: any round or soft curve in the arches and bowls, blunt ends, colour, extra ornaments.

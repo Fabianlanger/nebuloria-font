@@ -1,0 +1,114 @@
+{
+ "crystalpalace": {
+  "title": "Crystal Palace - interior.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Crystal_Palace_-_interior.jpg",
+  "artist": "J. McNeven",
+  "license": "Public domain",
+  "license_url": ""
+ },
+ "palmhouse": {
+  "title": "Palms in Palm House atrium.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Palms_in_Palm_House_atrium.jpg",
+  "artist": "Daniel Case",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+ },
+ "gate": {
+  "title": "Wrought iron gate St Michael's church.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wrought_iron_gate_St_Michael%27s_church.jpg",
+  "artist": "MauraWen",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "bandstand": {
+  "title": "Stanley Park bandstand 2018-1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Stanley_Park_bandstand_2018-1.jpg",
+  "artist": "Rodhullandemu",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "kibble": {
+  "title": "Kibble Palace, Botanic Gardens.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Kibble_Palace,_Botanic_Gardens.png",
+  "artist": "Lib79",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "pcb": {
+  "title": "RS 42471-12 PCB solder side.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:RS_42471-12_PCB_solder_side.jpg",
+  "artist": "Mister rf",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+ },
+ "phone": {
+  "title": "Ericsson Dialog Transparent 003.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ericsson_Dialog_Transparent_003.jpg",
+  "artist": "Ellinor Algin / Swedish National Museum of Science and Technology",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "imac": {
+  "title": "Apple iMac G3 Indigo slot-loading drive-2006-02-14.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Apple_iMac_G3_Indigo_slot-loading_drive-2006-02-14.jpg",
+  "artist": "https://www.flickr.com/people/katz2110/",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0"
+ },
+ "liana": {
+  "title": "Bauhinia guianensis, mature liana (9340889588).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bauhinia_guianensis,_mature_liana_(9340889588).jpg",
+  "artist": "Dick Culbert from Gibsons, B.C., Canada",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0"
+ },
+ "leaf": {
+  "title": "Leaf 1 web.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Leaf_1_web.jpg",
+  "artist": "Jon Sullivan",
+  "license": "Public domain",
+  "license_url": ""
+ },
+ "nibs": {
+  "title": "Various used dip and fountain pen nibs Sweden and beyond 1900s.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Various_used_dip_and_fountain_pen_nibs_Sweden_and_beyond_1900s.jpg",
+  "artist": "R. Henrik Nilsson",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0"
+ },
+ "nautilus": {
+  "title": "20000 squid Nautilus viewbay.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:20000_squid_Nautilus_viewbay.jpg",
+  "artist": "Alphonse de Neuville / Édouard Riou",
+  "license": "Public domain",
+  "license_url": ""
+ },
+ "aero": {
+  "title": "Boeing advanced blended wing body concept 2011 (cropped).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Boeing_advanced_blended_wing_body_concept_2011_(cropped).jpg",
+  "artist": "NASA/The Boeing Company",
+  "license": "Public domain",
+  "license_url": ""
+ },
+ "die": {
+  "title": "TI HC32 Die Shot (4x2-Input OR Gate) - 52871874720.png",
+  "page": "https://commons.wikimedia.org/wiki/File:TI_HC32_Die_Shot_(4x2-Input_OR_Gate)_-_52871874720.png",
+  "artist": "Cole L",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+ },
+ "bondwires": {
+  "title": "EPROM Microchip SuperMacro.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:EPROM_Microchip_SuperMacro.jpg",
+  "artist": "Zephyris",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+ },
+ "ribbon": {
+  "title": "IDC-10 female connector on flat cable (01).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:IDC-10_female_connector_on_flat_cable_(01).jpg",
+  "artist": "Retired electrician",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+ }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nebuloria Specimen</title>
+<style>
+@font-face { font-family: "Nebuloria"; src: url("nebuloria-regular.woff2") format("woff2"), url("nebuloria-regular.otf") format("opentype"); font-display: block; }
+:root { --bg: #fbf9f4; --ink: #1d1b18; --muted: #8a847a; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, sans-serif; }
+section { padding: 28px 40px; border-bottom: 1px solid #e3ddd0; }
+section.dark { background: #171717; color: #F9C852; border-color: #2a2a2a; }
+.label { font: 600 11px/1 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.n { font-family: "Nebuloria", serif; line-height: 1.15; margin: 0 0 .15em; }
+.s40 { font-size: 40px; } .s72 { font-size: 72px; } .s120 { font-size: 120px; }
+.grad { background: linear-gradient(100deg, #F9C852, #F08A3C 60%, #C8302A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.alpha { font-size: 64px; letter-spacing: .02em; word-break: break-all; }
+</style>
+</head>
+<body>
+<section><div class="label">Alphabet · 64 px</div>
+  <p class="n alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+  <p class="n alpha">abcdefghijklmnopqrstuvwxyz</p>
+</section>
+<section><div class="label">120 px</div>
+  <p class="n s120">Fabian Langer</p>
+  <p class="n s120">FABIAN LANGER</p>
+</section>
+<section><div class="label">72 px</div>
+  <p class="n s72">From strategy to solutions</p>
+  <p class="n s72">What do we mean by self learning</p>
+  <p class="n s72">Not everything that adapts learns</p>
+</section>
+<section class="dark"><div class="label">72 px · on the site background, IBS yellow and gradient</div>
+  <p class="n s72">Fabian Langer</p>
+  <p class="n s72">Confusing concepts make for <span class="grad">crippling policy</span></p>
+</section>
+<section><div class="label">40 px</div>
+  <p class="n s40">Services · Recent work · Talks and workshops · The full story behind my posts</p>
+  <p class="n s40">Fabian</p>
+</section>
+</body>
+</html>

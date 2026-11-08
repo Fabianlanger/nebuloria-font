@@ -1,0 +1,10 @@
+# build output and caches (reproducible: scripts/prepare_glyphs.py + scripts/build_font.py)
+build/
+__pycache__/
+*.pyc
+docs/book/*.print.html
+
+# third-party inspiration screenshots: copyrighted (stock photos, commercial font ads),
+# NOT licensed for redistribution. Kept locally only.
+inspiration/
+*.tmp.pdf

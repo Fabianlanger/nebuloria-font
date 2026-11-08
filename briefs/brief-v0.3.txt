@@ -1,0 +1,17 @@
+Display typeface specimen. Solid black letterforms on a plain warm off-white background. Flat vector look: no colour, no texture, no 3D, no shadow, no metallic shine.
+Style: a blend of Victorian cast-iron-and-glass conservatory architecture and Y2K tech lettering. High contrast, as if drawn with a broad-nib pen held at 45 degrees.
+
+LOWERCASE (the base style):
+1. Rounded bowls with a few 45-degree chamfered outer corners, never fully octagonal. Stems are heavy and straight.
+2. Mirrored weight profiles: main strokes stay at full weight and taper to a very thin hairline at their free end (feet run out into long hairline tails along the baseline). A thin wavy hairline "tendril" (like a wire) swells into a small teardrop at its free end.
+3. In letters with a bowl (a, b, g), one small leaf grows from the inside of the bowl into the centre of the counter.
+4. No leaf terminals, no flowers.
+
+CAPITALS:
+5. Every stroke of a capital is a visible stroke pair: the heavy stroke plus a thin wavy tendril that runs alongside it, both starting at a 45-degree chamfered top-left corner. Feet are asymmetric, longer to the right.
+
+DISCRETIONARY LIGATURES (dlig), the new idea:
+6. When a letter ending in a vertical stem on its right (a, n, h, m, u) is followed by a letter starting with a vertical stem on its left (b, n, h, m, i, r, l), the two stems are joined by a thin bridge at x-height and a thin bridge at the baseline. Together they enclose a new rectangular counter between the letters: a "window".
+7. Inside every window: exactly three short parallel hairlines at 45 degrees (running from lower-left to upper-right) in the top-left inner corner, and the same three in the bottom-right inner corner. Nothing else inside. This reads both as a circuit-board trace seen through translucent Y2K plastic and as a pane of glass in a Victorian conservatory.
+8. The window corners are chamfered at 45 degrees.
+Avoid: green or any colour, fairy-tale or storybook vine lettering, leaves stuck on top, blackletter, art deco, gold.

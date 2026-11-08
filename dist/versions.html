@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nebuloria Versions</title>
+<style>
+:root { --bg: #fbf9f4; --ink: #1d1b18; --muted: #8a847a; --rule: #e3ddd0; --accent: #a2541c; --bar: #f1ece2; }
+body.dark { --bg: #171717; --ink: #F9C852; --muted: #8f897e; --rule: #2c2c2c; --accent: #F9C852; --bar: #202020; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, sans-serif; }
+header { position: sticky; top: 0; z-index: 2; background: var(--bar); border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 16px; padding: 10px 24px; flex-wrap: wrap; }
+header button { font: 600 13px system-ui; padding: 6px 12px; border: 1px solid var(--rule); background: var(--bg);
+  color: var(--ink); border-radius: 6px; cursor: pointer; }
+header button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+#ver { font: 700 15px system-ui; min-width: 70px; }
+#note { font-size: 13px; color: var(--muted); flex: 1 1 300px; }
+.hint { font-size: 12px; color: var(--muted); }
+main { padding: 8px 24px 80px; }
+.n { font-family: var(--font, serif); line-height: 1.15; margin: 0; }
+.label { font: 600 11px/1 system-ui; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 26px 0 8px; }
+.s150 { font-size: 150px; } .s96 { font-size: 96px; } .s64 { font-size: 64px; } .s40 { font-size: 40px; }
+.grad { background: linear-gradient(100deg, #F9C852, #F08A3C 60%, #C8302A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#changed { color: var(--accent); }
+:root { --dlig: 0; --ss01: 0; }
+body.lig { --dlig: 1; } body.fence { --ss01: 1; }
+.n, #writer { font-feature-settings: "dlig" var(--dlig), "ss01" var(--ss01); }
+.writer-tools { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
+.writer-tools input[type=range] { width: 200px; }
+#writer { font-family: var(--font, serif); font-size: var(--wsize, 110px); line-height: 1.2; min-height: 1.3em;
+  outline: none; border: 1px dashed var(--rule); border-radius: 8px; padding: 8px 14px; margin: 0; word-wrap: break-word; }
+#writer:focus { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <button id="prev" title="Previous version (←)">←</button>
+  <span id="ver"></span>
+  <button id="next" title="Next version (→)">→</button>
+  <span id="dots"></span>
+  <span id="note"></span>
+  <button id="lig" class="on" title="Toggle discretionary ligatures (L)">Vensters + draden</button>
+  <button id="fence" title="Every qualifying pair gets a window (H)">Hekwerk</button>
+  <button id="theme" title="Toggle dark background (D)">Dark</button>
+  <span class="hint">← → version · L ligaturen · H hekwerk · D dark · 1–9 jump</span>
+</header>
+<main>
+  <div class="label">Schrijf zelf · klik in het vak en typ</div>
+  <div class="writer-tools"><label>Grootte <input type="range" id="size" min="24" max="220" value="110"></label><span id="sizeVal">110 px</span><span>Pijltjes werken niet tijdens het typen. Klik buiten het vak om van versie te wisselen.</span></div>
+  <div id="writer" contenteditable="true" spellcheck="false">Fabian Langer · illumination</div>
+
+  <div class="label">Vensters en draden (dlig)</div>
+  <p class="n s96">Fabian Langer</p>
+  <p class="n s96">illuminating humming minimal</p>
+  <p class="n s96">the iron fence: illi · nun · him</p>
+  <p class="n s96">Faber · Lange · center · general</p>
+
+  <div class="label">Changed in this version</div>
+  <p class="n s96" id="changed"></p>
+
+  <div class="label">Alphabet</div>
+  <p class="n s64">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+  <p class="n s64">abcdefghijklmnopqrstuvwxyz</p>
+
+  <div class="label">Wordmark · 150 px</div>
+  <p class="n s150">Fabian Langer</p>
+
+  <div class="label">Headings · 96 px</div>
+  <p class="n s96">From strategy to <span class="grad">solutions</span></p>
+  <p class="n s96">Cabin Number · Making Waves</p>
+
+  <div class="label">Text · 64 px</div>
+  <p class="n s64">What do we mean by self learning</p>
+  <p class="n s64">Not everything that adapts learns</p>
+  <p class="n s64">Confusing concepts make for crippling policy</p>
+
+  <div class="label">Small · 40 px</div>
+  <p class="n s40">Services · Recent work · Talks and workshops · The full story behind my posts</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  // Add a new entry here for every new build (newest last).
+  const VERSIONS = [
+    { id: "v1.0", file: "versions/nebuloria-v1.0.woff2", changed: "",
+      note: "First full alphabet from the glyph sheets (+ t q I fixes). Older spacing." },
+    { id: "v1.1", file: "versions/nebuloria-v1.1.woff2", changed: "CGKMVWXY mnux",
+      note: "Redesign: 45° flags, tendrils and broad-nib contrast on C G K M V W X Y; sharp spurs on m n u x. New spacing." },
+    { id: "v1.2", file: "versions/nebuloria-v1.2.woff2", changed: "C bmn",
+      note: "Straight lines with 45° chamfers instead of round curves: capital C, lowercase b m n." },
+    { id: "v1.3", file: "versions/nebuloria-v1.3.woff2", changed: "an il ng er",
+      note: "dlig: window ligature between right-stem and left-stem letters (incl. i and l = iron fence) + wires Fa La ng er re ce ge." },
+    { id: "v1.4", file: "versions/nebuloria-v1.4.woff2", changed: "an il ng er",
+      note: "Calmer: hairline window in the gap, max one per word (Hekwerk = all). Wires drawn by the image model as round hanging lianas (Fa La ng er re ce ge), traced." },
+    { id: "v1.5", file: "versions/nebuloria-v1.5.woff2", changed: "vwz b Fa",
+      note: "v w z on the baseline; b = v1.1 stem + terminal with edgy bowl; F of v1.1–1.3 back, with its own drawn liana into the a." },
+    { id: "v1.5 Hekwerk", file: "versions/nebuloria-hekwerk-v1.5.woff2", changed: "illumination",
+      note: "Second family 'Nebuloria Hekwerk': windows in every pair by default (ss01 switches back to one per word)." },
+  ];
+  const $ = (id) => document.getElementById(id);
+  let idx = VERSIONS.length - 1;
+
+  // register every version as its own family so switching is instant
+  const loads = VERSIONS.map((v, i) => {
+    const face = new FontFace(`Neb${i}`, `url(${v.file}) format("woff2")`);
+    document.fonts.add(face);
+    return face.load().catch((err) => { v.note = `⚠ could not load ${v.file}: ${err.message}`; });
+  });
+
+  VERSIONS.forEach((v, i) => {
+    const b = document.createElement("button");
+    b.textContent = v.id;
+    b.addEventListener("click", () => show(i));
+    $("dots").append(b);
+  });
+
+  function show(i) {
+    idx = (i + VERSIONS.length) % VERSIONS.length;
+    const v = VERSIONS[idx];
+    document.documentElement.style.setProperty("--font", `"Neb${idx}", serif`);
+    $("ver").textContent = v.id;
+    $("note").textContent = v.note;
+    $("changed").textContent = v.changed || "—";
+    [...$("dots").children].forEach((b, j) => b.classList.toggle("on", j === idx));
+  }
+
+  $("prev").addEventListener("click", () => show(idx - 1));
+  $("next").addEventListener("click", () => show(idx + 1));
+  $("theme").addEventListener("click", () => document.body.classList.toggle("dark"));
+  document.body.classList.add("lig");
+  $("lig").addEventListener("click", () => { document.body.classList.toggle("lig"); $("lig").classList.toggle("on"); });
+  $("fence").addEventListener("click", () => { document.body.classList.toggle("fence"); $("fence").classList.toggle("on"); });
+  $("size").addEventListener("input", (e) => {
+    document.documentElement.style.setProperty("--wsize", e.target.value + "px");
+    $("sizeVal").textContent = e.target.value + " px";
+  });
+  document.addEventListener("keydown", (e) => {
+    if (document.activeElement === $("writer")) return;   // typing: keys belong to the writer
+    if (e.key === "l" || e.key === "L") { $("lig").click(); return; }
+    if (e.key === "h" || e.key === "H") { $("fence").click(); return; }
+    if (e.key === "ArrowLeft") { show(idx - 1); e.preventDefault(); }
+    else if (e.key === "ArrowRight") { show(idx + 1); e.preventDefault(); }
+    else if (e.key === "d" || e.key === "D") document.body.classList.toggle("dark");
+    else if (/^[1-9]$/.test(e.key) && Number(e.key) <= VERSIONS.length) show(Number(e.key) - 1);
+  });
+
+  Promise.all(loads).then(() => show(idx));
+  show(idx);
+})();
+</script>
+</body>
+</html>

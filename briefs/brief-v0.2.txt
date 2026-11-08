@@ -1,0 +1,10 @@
+Display typeface specimen. Solid black letterforms on a plain warm off-white background. Flat vector look: no colour, no texture, no 3D, no shadow, no metallic shine.
+Style: a blend of Victorian cast-iron conservatory ironwork and Y2K tech lettering. High contrast, as if drawn with a broad-nib pen held at 45 degrees.
+Rules for every letter:
+1. Stroke pairs: every letter part is a heavy main stroke plus a thin wavy hairline "tendril" (like a wire) that starts at the same point and then diverges.
+2. Mirrored weight profiles: the main stroke stays at full weight for most of its length and tapers to a very thin hairline at its free end. The tendril is a hairline all along and swells slightly into a small teardrop at its free end.
+3. Subtle negative space: at most one small leaf-shaped cut-out per stroke pair, only where the tendril touches the main stroke.
+4. Tech geometry: outer corners are chamfered at 45 degrees. Diagonals run only at 45 degrees, from north-east to south-west. A curve first runs straight, then turns through a short 45-degree segment, then curls.
+5. Few leaves: at most one leaf terminal per letter, only at its top-most free end. In letters with a bowl (a, b), one small leaf grows from the inside of the bowl into the centre of the counter.
+6. Stems stand on an asymmetric serif foot, longer to the right.
+Avoid: green or any colour, fairy-tale or storybook vine lettering, leaves stuck on top of strokes, flowers, art nouveau excess, art deco, gold.

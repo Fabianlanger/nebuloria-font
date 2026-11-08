@@ -1,0 +1,5 @@
+REDESIGN of one capital letter: C. Same typeface, same size, same stroke sharpness as the attached references (REFERENCE LANGER v0.2 for sharpness; the approved octagonal capital O and the current capital C with its tendril).
+Solid black on plain warm off-white, flat vector look. Only this one letter, centred, nothing else in the image.
+
+THE KEY CHANGE: NO ROUND CURVES. Build the C like the octagonal capital O in the reference: straight lines joined by crisp 45-degree CHAMFER CUTS. A heavy straight vertical left side; crisp 45-degree chamfers at the top-left and bottom-left outer corners; flat straight top and bottom strokes that become hair-thin where they turn through the chamfer cuts. The upper terminal is a straight vertical beak cut sharply at 45 degrees; the lower terminal runs out into a needle-sharp hairline. Keep the family details: the crisp 45-degree chamfered flag at the top-left and the thin wavy tendril alongside the heavy left side, ending in a small teardrop.
+Avoid: any round or soft curve, blunt ends, colour, extra ornaments.

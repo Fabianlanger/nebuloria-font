@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nebuloria Style Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "Nebuloria"; src: url("../../dist/nebuloria-regular.woff2") format("woff2"); font-display: block; }
+@page { size: 200mm 250mm; margin: 0; }
+:root { --ink: #1d1b18; --paper: #f4efe4; --dark: #171717; --yellow: #F9C852; --orange: #F08A3C; --red: #C8302A; --muted: #7a7368; --rule: #d9d1c1; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Poppins, sans-serif; font-weight: 300; color: var(--ink); background: #888; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 200mm; height: 250mm; position: relative; overflow: hidden; background: var(--paper); padding: 18mm 18mm 16mm; page-break-after: always; break-after: page; }
+.page.dark { background: var(--dark); color: #e9e3d6; }
+.neb { font-family: "Nebuloria", serif; font-feature-settings: "dlig" 1; line-height: 1.05; font-weight: normal; }
+.plain { font-feature-settings: "dlig" 0; }
+.y { color: var(--yellow); }
+.kicker { font-weight: 600; font-size: 7.5pt; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 0 0 4mm; }
+h2.neb { font-size: 30pt; margin: 0 0 6mm; }
+h3 { font-weight: 600; font-size: 9pt; letter-spacing: .06em; margin: 6mm 0 2mm; }
+p, li { font-size: 9.2pt; line-height: 1.6; margin: 0 0 3mm; }
+.cap { font-size: 6.8pt; line-height: 1.4; color: var(--muted); margin-top: 1.6mm; }
+table { border-collapse: collapse; width: 100%; font-size: 8.2pt; margin-bottom: 4mm; }
+td, th { text-align: left; vertical-align: top; padding: 1.6mm 3mm 1.6mm 0; border-bottom: .25mm solid var(--rule); }
+th { font-weight: 600; font-size: 6.8pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.dark td, .dark th { border-color: #2e2e2e; }
+code { font-family: Consolas, monospace; font-size: 7.8pt; background: rgba(0,0,0,.06); padding: .2mm 1mm; border-radius: 1mm; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.box { background: #fbf8f1; border: .3mm solid var(--rule); border-radius: 2mm; padding: 5mm; display: flex; align-items: center; justify-content: center; }
+.box img { max-width: 100%; max-height: 100%; }
+.swatch { height: 22mm; border-radius: 2mm; display: flex; align-items: flex-end; padding: 2mm 3mm; font-size: 7pt; font-weight: 600; }
+.do { color: #2f7a3c; font-weight: 600; } .dont { color: #b3362b; font-weight: 600; }
+body { counter-reset: pg; } .page { counter-increment: pg; } .pgno::after { content: counter(pg); }
+pre { font-family: Consolas, monospace; font-size: 7.1pt; line-height: 1.45; background: #1f1f1f; color: #e9e3d6; padding: 4mm; border-radius: 2mm; white-space: pre-wrap; margin: 0 0 4mm; }
+.folio { position: absolute; bottom: 8mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+@media screen { .page { margin: 6mm auto; box-shadow: 0 2mm 6mm rgba(0,0,0,.3); } }
+.cover .kicker, .cover .cap { color: #c9bfa9 !important; }
+.cover p { text-shadow: 0 .4mm 2.5mm rgba(0,0,0,.7); color: #f1e9d8 !important; }
+</style>
+</head>
+<body>
+
+<section class="page dark cover" style="display:flex;flex-direction:column;justify-content:flex-start;background:linear-gradient(180deg, rgba(22,13,8,.55) 0%, rgba(22,13,8,.35) 40%, rgba(22,13,8,0) 60%), linear-gradient(0deg, rgba(22,13,8,.45) 0%, rgba(22,13,8,0) 18%), url(cover-bg.jpg) center/cover no-repeat, #121410">
+  <div class="kicker" style="margin-top:6mm">Style guide · Version 1.5</div>
+  <div style="margin-top:10mm">
+    <h1 class="neb" style="font-size:62pt;margin:0;color:#f1e9d8;text-shadow:0 1mm 6mm rgba(0,0,0,.45)">Nebuloria<br>style guide</h1>
+    <p style="max-width:120mm;margin-top:8mm;font-size:11pt">The rules behind the typeface, in numbers, so that icons, ornaments, frames and layouts can speak the same language as the letters.</p>
+  </div>
+  <p class="cap" style="margin-top:auto;color:#8f897e">Companion to the Nebuloria Design Book. Units are font units (1000 per em, x-height 500) unless stated otherwise.</p>
+</section>
+
+<section class="page">
+  <div class="kicker">1 · Stroke model</div>
+  <h2 class="neb">A broad nib at 45°</h2>
+  <p>Nebuloria is drawn as if with a <b>broad-edged pen held at 45°</b>. Strokes moving from top-left to bottom-right are heavy; strokes moving from top-right to bottom-left are hairlines. Apply the same model to every drawn line on the site.</p>
+  <table>
+    <tr><th>Property</th><th>Value</th><th>Rule of thumb</th></tr>
+    <tr><td>Pen angle</td><td>45° (edge NE–SW)</td><td>Thin along NE–SW, heavy along NW–SE</td></tr>
+    <tr><td>Lowercase stem</td><td>≈ 112 (x-height 500)</td><td>stem ≈ 0.22 × x-height</td></tr>
+    <tr><td>Capital stem</td><td>≈ 125–130</td><td>≈ 1.15 × lowercase stem</td></tr>
+    <tr><td>Hairline</td><td>≈ 13</td><td>stem ÷ 8</td></tr>
+    <tr><td>Contrast</td><td>≈ 8 : 1</td><td>thick : thin</td></tr>
+    <tr><td>Tendril</td><td>≈ 11</td><td>≈ stem ÷ 10, constant width</td></tr>
+  </table>
+  <h3>Optical size for icons and ornaments</h3>
+  <table>
+    <tr><th>Drawing size</th><th>Main stroke</th><th>Hairline</th><th>Contrast</th></tr>
+    <tr><td>24 px icon</td><td>2.5 px</td><td>1 px (minimum)</td><td>≈ 2.5 : 1</td></tr>
+    <tr><td>48 px icon (grid 48 × 48)</td><td>5 px</td><td>1 px</td><td>≈ 5 : 1</td></tr>
+    <tr><td>96 px and up</td><td>size × 0.11</td><td>main ÷ 8, ≥ 1 px</td><td>8 : 1</td></tr>
+    <tr><td>Diagrams, 600 px</td><td>≈ 12 px</td><td>≈ 1.5 px</td><td>8 : 1</td></tr>
+  </table>
+  <p class="cap">Hairlines never go below 1 CSS pixel; contrast is reduced at small sizes rather than letting hairlines disappear .</p>
+  <div class="folio"><span>Stroke model</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">2 · Weight along the stroke</div>
+  <h2 class="neb">Mirrored weight</h2>
+  <div class="cols">
+    <div>
+      <p>Every main stroke comes in a <b>stroke pair</b> with a thin <b>tendril</b>. Both start at the same point. Their weight profiles mirror each other:</p>
+      <table>
+        <tr><th>Stroke</th><th>Profile</th></tr>
+        <tr><td>Main stroke</td><td>Full weight for the first ≈ 80% of its length, then tapers to a needle point or a hairline tail.</td></tr>
+        <tr><td>Tendril</td><td>Hairline for ≈ 85% of its length, then swells into a small teardrop (≈ 3 × tendril width).</td></tr>
+      </table>
+      <h3>Terminals</h3>
+      <table>
+        <tr><th>Terminal</th><th>Where</th></tr>
+        <tr><td>Needle point</td><td>Free ends of main strokes, spurs</td></tr>
+        <tr><td>Hairline tail</td><td>Feet, along the baseline, longer to the right</td></tr>
+        <tr><td>Teardrop</td><td>End of every tendril and wire</td></tr>
+        <tr><td>Chamfered flag</td><td>Top-left of capitals and entry spurs, cut at 45°</td></tr>
+        <tr><td>Leaf</td><td>Only inside closed counters; never on top</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="box" style="height:95mm"><span class="neb plain" style="font-size:118pt">Fl</span></div>
+      <div class="cap">The F: heavy stroke, tendril alongside, teardrop at the end, chamfered flag at the top-left, asymmetric foot.</div>
+      <div class="box" style="height:52mm;margin-top:5mm"><img src="svg/glyph-a-leaf.svg" style="height:40mm" alt="a with leaf"></div>
+      <div class="cap">The leaf grows from the inside of the bowl into the counter.</div>
+    </div>
+  </div>
+  <div class="folio"><span>Weight</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">3 · Construction</div>
+  <h2 class="neb">Where the weight moves</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4mm">
+    <div class="box" style="height:62mm"><img src="svg/glyph-lc-s.svg" style="height:40mm" alt="s"></div>
+    <div class="box" style="height:62mm"><img src="svg/glyph-lc-g.svg" style="height:50mm" alt="g"></div>
+    <div class="box" style="height:62mm"><img src="svg/glyph-lc-e.svg" style="height:40mm" alt="e"></div>
+  </div>
+  <div class="cap">The lowercase s, g and e are the reference letters for construction: watch how the weight travels through each stroke.</div>
+  <div class="cols" style="margin-top:5mm">
+    <div>
+      <p><b>The weight travels.</b> In the s the heavy part runs diagonally through the spine (top-left to bottom-right) and thins into hairlines where the curve turns. The g and e show the same: heavy where the pen moves NW–SE, hair-thin where it moves NE–SW.</p>
+      <p><b>Straight, then turn.</b> A curve first runs straight and only then bends; the turn is where the stroke becomes thin.</p>
+      <p><b>Round and cut, each in its place.</b> Bowls may stay round where the weight flows (s, g, e); a 45° cut is used where a stroke ends or meets a corner (the terminals of the s and e, the ear of the g). Never a perfect circle, never a soft blob.</p>
+    </div>
+    <div>
+      <p><b>One direction.</b> Diagonals and curls only travel north-east to south-west.</p>
+      <p><b>Asymmetry.</b> Feet are longer to the right; stroke ends finish in sharp chamfered points.</p>
+      <h3>Applying it to frames, dividers and vines</h3>
+      <table>
+        <tr><th>Element</th><th>Rule</th></tr>
+        <tr><td>Frames and corners</td><td>Straight frame, corners cut at 45° (≈ 1/4 of the shorter side).</td></tr>
+        <tr><td>Dividers</td><td>Hairline swelling into a heavy centre, needle points at both ends.</td></tr>
+        <tr><td>Vines</td><td>Heavy stem with a tendril alongside; turns go straight-then-turn.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="folio"><span>Construction</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">4 · Components</div>
+  <h2 class="neb">The window and the wire</h2>
+  <div class="cols">
+    <div>
+      <div class="box" style="height:70mm"><img src="svg/component-window.svg" style="height:58mm" alt="window"></div>
+      <table style="margin-top:4mm">
+        <tr><th>Window part</th><th>Value</th></tr>
+        <tr><td>Bridges (x-height, baseline)</td><td>10 thick, hairline</td></tr>
+        <tr><td>Pane outline</td><td>5, inset 14, corners cut 26 at 45°</td></tr>
+        <tr><td>Glare lines</td><td>3 × 45°, lengths 34 / 52 / 70, width 5</td></tr>
+        <tr><td>Position</td><td>top-left and bottom-right of the pane</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="box" style="height:70mm"><img src="svg/component-wire-ng.svg" style="height:58mm" alt="wire"></div>
+      <p style="margin-top:4mm">The <b>window</b> is a pane of glass and a circuit seen through clear plastic. Use it as a picture frame, a card or a callout: hairline frame, chamfered corners, three glare lines, nothing else inside.</p>
+      <p>The <b>wire</b> hangs like a liana: from the top-right of one element, a soft round U-curve, into the top-left of the next, ending in a teardrop. Use it to connect steps on a route; never straight, never angular.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Components</span><span class="pgno"></span></div>
+</section>
+
+
+
+<section class="page">
+  <div class="kicker">5 · Typography</div>
+  <h2 class="neb">Roles and sizes</h2>
+  <table>
+    <tr><th>Role</th><th>Use</th><th>Size</th><th>Features</th></tr>
+    <tr><td>Wordmark</td><td>Names, logos, signatures</td><td>80–160 px</td><td><code>dlig</code> on</td></tr>
+    <tr><td>Display headings</td><td>Titles, section heads</td><td>36–96 px</td><td><code>dlig</code> off, or on from 72 px</td></tr>
+    <tr><td>Pull quotes</td><td>Short lines, closing words</td><td>30–60 px</td><td><code>dlig</code> on</td></tr>
+    <tr><td>Iron fence</td><td>Single words, very large</td><td>96 px and up</td><td>Hekwerk style, or <code>ss01</code> on</td></tr>
+    <tr><td>Text and UI</td><td>Not for Nebuloria</td><td>–</td><td>pair with a calm text face</td></tr>
+  </table>
+  <div class="cols">
+    <div>
+      <h3>Pairing</h3>
+      <p>Nebuloria is the one expressive moment per page. Everything that needs to be read is set in a calm, neutral text face. Never set Nebuloria in all caps for more than two words, and never track it out.</p>
+      <h3>Hekwerk</h3>
+      <p>Use the Hekwerk style (or <code>ss01</code>) only for single words at large size, where the iron fence is the point.</p>
+    </div>
+    <div class="box" style="height:62mm;flex-direction:column;align-items:flex-start;padding:7mm">
+      <span class="neb" style="font-size:34pt">Recent work</span>
+      <span style="font-size:9pt;margin-top:3mm">A calm text face for what needs to be read, Nebuloria for what needs to be felt.</span>
+    </div>
+  </div>
+  <div class="folio"><span>Typography</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">6 · Do and don't</div>
+  <h2 class="neb">Keep it precise</h2>
+  <div class="cols">
+    <div>
+      <p class="do">Do</p>
+      <ul>
+        <li>Grow ornament from the stroke: tendrils, leaves inside counters, wires between elements.</li>
+        <li>Cut corners at 45° and let the stroke thin at the cut.</li>
+        <li>Keep hairlines ≥ 1 px and contrast ≈ 8 : 1 at large sizes.</li>
+        <li>Use one window or one wire per composition.</li>
+              </ul>
+    </div>
+    <div>
+      <p class="dont">Don't</p>
+      <ul>
+        <li>Add flowers or leaves on top of lines.</li>
+        <li>Use chrome, gloss, gold, bevels or drop shadows.</li>
+        <li>Draw perfect circles or soft round blobs.</li>
+        <li>Use uniform, monolinear strokes for ornaments.</li>
+        <li>Set Nebuloria below 30 px or for running text.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="folio"><span>Do and don't</span><span class="pgno"></span></div>
+</section>
+
+
+<section class="page">
+  <div class="kicker">7 · Prompting Nebuloria · the language</div>
+  <h2 class="neb">Say it precisely</h2>
+  <p>Nebuloria was made by directing AI image models with words. These are the words that worked. Use them exactly; vague mood words ("magical", "organic", "techy") make a model drift to clichés.</p>
+  <table>
+    <tr><th>Term</th><th>Means</th></tr>
+    <tr><td>Centre line</td><td>The path of a stroke, without thickness. (Avoid "skeleton" for this: it suggests a heavy frame.)</td></tr>
+    <tr><td>Stroke</td><td>All thickness laid over the centre line, heavy and thin, plus its ends.</td></tr>
+    <tr><td>Broad nib at 45°</td><td>Strokes top-left to bottom-right heavy, top-right to bottom-left hairline.</td></tr>
+    <tr><td>Hairline</td><td>The thinnest stroke, about 1/8 of a stem.</td></tr>
+    <tr><td>Stroke pair</td><td>A heavy stroke plus a thin wavy tendril starting at the same point.</td></tr>
+    <tr><td>Tendril</td><td>Monolinear wavy hairline that swells into a small teardrop at its end.</td></tr>
+    <tr><td>Taper</td><td>A heavy stroke running out into a needle point or hairline tail.</td></tr>
+    <tr><td>Chamfer</td><td>A corner cut straight at 45°.</td></tr>
+    <tr><td>Chamfered flag</td><td>The 45°-cut entry at the top-left of capitals and stems.</td></tr>
+    <tr><td>Counter leaf</td><td>A small sharp leaf growing from inside a closed bowl into the counter.</td></tr>
+    <tr><td>Window</td><td>Shared counter between two stems: hairline bridges, chamfered pane, three 45° glare lines.</td></tr>
+    <tr><td>Wire</td><td>A round hanging liana-cable from one letter's top-right into the next letter's top-left.</td></tr>
+    <tr><td>Glyph sheet</td><td>One row of separate letters with wide gaps, for tracing.</td></tr>
+  </table>
+  <p class="cap">Words have a dose: always say how much and where. "Chamfered corners" means everywhere; "at most one" tends to mean none.</p>
+  <div class="folio"><span>Prompting</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">8 · Prompting Nebuloria · the base prompt</div>
+  <h2 class="neb">Start here</h2>
+  <p><b>This is an AI prompt</b> for an image generator (for example ChatGPT, Midjourney or Gemini). It recreates lettering in the style of Nebuloria, or something very close to it: for new letters, a logo, a title or a variation. Copy it, replace <b>[LETTERS]</b> with the letters or word you want, and attach one or two images of Nebuloria letters as references.</p>
+  <p style="background:#fbf8f1;border-left:.8mm solid var(--orange);padding:2.5mm 4mm"><b>Tip:</b> take a screenshot of the font (for example from the design book) and ask the AI to use that font. A reference image is worth more than any description.</p>
+<pre>A glyph sheet for the display typeface Nebuloria. Solid black letterforms on a
+plain warm off-white background, flat vector look: no colour, no texture,
+no 3D, no shadow, no guide lines, no labels.
+
+LAYOUT: one single horizontal row of separate letters on one baseline, all the
+same size, with a wide empty gap between every two letters. Nothing touches,
+nothing connects letters to each other. The row shows: [LETTERS]
+
+STROKE: razor-sharp, crisp edges. Extreme contrast, as if drawn with a
+broad-nib pen held at 45 degrees: strokes from top-left to bottom-right are
+heavy, strokes from top-right to bottom-left are hairlines (about 1:8).
+Every free end tapers to a needle point or runs out into a hairline tail
+along the baseline. Never blunt, never soft rounded blobs.
+
+CONSTRUCTION: a curve first runs straight, then turns; the stroke becomes
+hair-thin where it turns. Corners and stroke ends are cut at crisp 45-degree
+chamfers; bowls where the weight flows stay round (like s, g and e).
+Diagonals and curls only run north-east to south-west.
+Serif feet are asymmetric, longer to the right.
+
+CAPITALS: every main stem is a stroke pair: a heavy stroke with a thin wavy
+monolinear tendril alongside it, starting at a chamfered top-left flag and
+ending in a small teardrop.
+
+LOWERCASE: heavy straight stems, hairline tails along the baseline, a small
+sharp-pointed leaf growing inside every closed bowl (a b d g o p q),
+a small chamfered diamond dot on i and j.
+
+STYLE: Victorian cast-iron-and-glass conservatory meets Y2K translucent
+futurism; elegant solarpunk. Botanical, not floral.
+Avoid: colour, fairy-tale vine lettering, leaves stuck on top of strokes,
+flowers, blackletter, art deco, gold, metallic effects.</pre>
+  <div class="folio"><span>Prompting</span><span class="pgno"></span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">9 · Prompting Nebuloria · correcting prompts</div>
+  <h2 class="neb">When it goes wrong</h2>
+  <p>Models rarely get it right in one shot. These were the most frequent problems while making Nebuloria, and the follow-ups that fixed them.</p>
+  <table style="font-size:7.5pt">
+    <tr><th style="width:30%">Problem</th><th>Correcting prompt (add to the base prompt)</th></tr>
+    <tr><td>Drifts into fairy-tale vines, turns green, leaves sit on top</td><td><i>"Black only. No storybook or fairy-tale vine lettering. Leaves only inside closed counters, growing from the stroke; nothing added on top of strokes; no flowers."</i></td></tr>
+    <tr><td>Strokes look soft, blunt or blurry</td><td><i>"Copy the stroke sharpness of the reference exactly: needle-fine points, hairline tails, crisp 45° cuts. Never blunt or rounded ends, no blurry edges."</i></td></tr>
+    <tr><td>Chamfers everywhere: letters turn octagonal or blackletter</td><td><i>"Chamfer only the top-left flag and the corners where a stroke ends. Bowls where the weight flows stay round, like the reference s, g and e."</i></td></tr>
+    <tr><td>A letter looks too basic, not part of the family</td><td><i>"Apply all family techniques: broad-nib contrast at 45°, crisp chamfered flag, needle-sharp ends, asymmetric tapering feet and, for capitals, a tendril alongside the heavy stroke."</i> Name approved letters as the standard.</td></tr>
+    <tr><td>Round where it should be cut, or cut where it should flow</td><td>Say exactly where, e.g. <i>"the arch leaves the stem as a straight 45° hairline, runs flat, then drops through a crisp chamfered shoulder into the heavy stem."</i></td></tr>
+    <tr><td>Wires come out straight, angular or as spikes</td><td><i>"The wire is a smooth round hanging liana: from the top-right of the first letter, a soft U-curve, rising into the top-left of the next. Tendril thickness. Never straight, never a V."</i></td></tr>
+    <tr><td>Windows too heavy or too many, letters unreadable</td><td><i>"Hairline bridges, a hairline pane outline, no filled corners, at most one window per word; every letter must stay readable."</i></td></tr>
+    <tr><td>Wrong letter identity (q as g, I as i, t as f, F as E)</td><td>Describe the defining trait: <i>"q is a mirrored p with a straight stem on the right; capital I has no dot; t has a short stem and a crossbar; the F's foot is short on the right."</i></td></tr>
+    <tr><td>Letters touch, so they cannot be cut apart</td><td><i>"A wide empty gap of at least half a letter width between letters; nothing touches."</i></td></tr>
+    <tr><td>Adding a detail makes the model redraw the whole letter</td><td>Render the existing letters in light grey and ask: <i>"keep the grey letters exactly; add only the [detail] in pure black."</i> Then extract the black.</td></tr>
+  </table>
+  <div class="folio"><span>Prompting</span><span class="pgno"></span></div>
+</section>
+
+</body>
+</html>
