@@ -14,8 +14,20 @@ Heavy strokes carry hair-thin tendrils, corners are cut at 45°, small leaves gr
 
 ### 1. Download
 
-Download the **newest** version: at the time of writing that is **[Nebuloria-v1.5.zip](dist/Nebuloria-v1.5.zip)**. Click it, then the **download** button (the arrow icon on the right). Newer versions add more characters.
-Unzip it: double-click the file (Mac) or right-click → **Extract all** (Windows).
+Download the **newest** version. At the time of writing that is **v1.5**; newer versions add more characters.
+
+**Easiest:** click **[⬇ Download Nebuloria-v1.5.zip](https://github.com/Fabianlanger/nebuloria-font/raw/main/dist/Nebuloria-v1.5.zip)**. The download starts right away.
+
+**Or step by step on this page:**
+
+![How to download Nebuloria on GitHub in four steps](docs/img/how-to-download.png)
+
+1. In the file list, open the folder **dist**.
+2. Click the file **Nebuloria-v1.5.zip** (or the newest version number you see).
+3. Click the **···** button at the top right.
+4. Click **Download**.
+
+Then unzip it: double-click the file (Mac) or right-click → **Extract all** (Windows).
 
 Inside you will find:
 
