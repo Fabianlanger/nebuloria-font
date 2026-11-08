@@ -80,8 +80,9 @@ def split_to(runs: list[tuple[int, int]], n: int, ink: np.ndarray) -> list[tuple
 
 
 def token_id(token: str) -> str:
-    """File-safe id that survives case-insensitive file systems: 'La' -> 'uc-L_lc-a'."""
-    return "_".join(("uc-" if c.isupper() else "lc-") + c for c in token)
+    """File-safe id that survives case-insensitive file systems: 'La' -> 'uc-L_lc-a', '?' -> 'u003F'."""
+    return "_".join(("uc-" + c) if c.isupper() else ("lc-" + c) if c.isalnum() else f"u{ord(c):04X}"
+                    for c in token)
 
 
 def pair_gap(mask: np.ndarray, top: int, bot: int, stem_min: int) -> tuple[int, int] | None:

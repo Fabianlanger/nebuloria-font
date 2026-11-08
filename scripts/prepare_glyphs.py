@@ -8,6 +8,7 @@ pointed letters (v, w) fooled the automatic baseline.
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import sys
 from pathlib import Path
@@ -40,7 +41,18 @@ SHEETS = [
     ("fix-7-b.png", "b", "lower", 1005, 527),
     ("lig-1-La-ng-er-Fa.png", "La ng er Fa", "lower", None, None),
     ("lig-2-re-ce-ge.png", "re ce ge", "lower", None, None),
+    # v1.6: figures, punctuation, symbols, accents. The first letter of each sheet (H or n)
+    # is only a size reference: it gives baseline and cap/x-height, then it is dropped.
+    ("fig-1-01234.png", "H 0 1 2 3 4", "upper", None, None),
+    ("fig-2-56789.png", "H 5 6 7 8 9", "upper", None, None),
+    ("punct-1-stops.png", "n . , : ; ! ? - ( )", "lower", None, None),
+    ("punct-2-quotes.png", "n ' \" \u2018 \u2019 \u201c \u201d & /", "lower", None, None),
+    ("punct-3-symbols.png", "H + % # @ \u20ac", "upper", None, None),
+    ("accents-1-marks.png", "n \u00b4 ` \u02c6 \u00a8 \u02dc \u00b8", "lower", None, None),
 ]
+# reference letters on these sheets: measured, never built
+REFERENCE_ONLY = {"fig-1-01234.png": "H", "fig-2-56789.png": "H", "punct-1-stops.png": "n",
+                  "punct-2-quotes.png": "n", "punct-3-symbols.png": "H", "accents-1-marks.png": "n"}
 # (drawn wire image, reference grid, pair)
 WIRES = [("wire-Fa-drawn.png", "../refs/wire-Fa.json", "Fa")]
 
@@ -55,6 +67,11 @@ def main(argv: list[str]) -> int:
     try:
         for sheet, letters, kind, base, top in SHEETS:
             m = segment(S / sheet, letters, glyphs, kind, base, top)
+            drop = REFERENCE_ONLY.get(sheet)
+            if drop:
+                m["chars"] = [c for c in m["chars"] if c != drop]
+                (glyphs / m["glyphs"].pop(drop)["crop"]).unlink(missing_ok=True)
+                (glyphs / f"{Path(sheet).stem}.json").write_text(json.dumps(m, indent=1), encoding="utf-8")
             print(f"  {sheet}: {len(m['chars'])} glyphs")
         for drawn, ref, pair in WIRES:
             extract(S / drawn, (S / ref).resolve(), wires / f"{pair}.svg", dark=90)

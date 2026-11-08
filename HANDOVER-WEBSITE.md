@@ -80,14 +80,12 @@ Notes:
 
 ## 4. Not done yet (the next font version)
 
-The handover's character set (§4.2) is only partly covered. v1.5 has **A–Z, a–z, space, non-breaking space**.
+**Update v1.6 (2026-11-08):** the handover's character set (§4.2) is now covered: A–Z, a–z, figures 0–9 (lining, R4), punctuation `. , : ; ! ? ' " ‘ ’ “ ” - – — ( ) & / + % # @ · …`, `€`, and the accents `é è ê ë á à ä â í ì ï î ó ò ö ô ú ù ü û ç ñ` in both cases. Copy the new `dist/nebuloria-regular.woff2` (and Hekwerk) to the site's `app/fonts/`; Poppins fallbacks for punctuation and accents in display text can go.
 
-| Missing | Effect on the site now | Workaround until v1.6 |
+| Still missing | Effect on the site now | Workaround |
 |---|---|---|
-| Figures 0–9, `+` (R4) | Stats would fall back to Times | Keep R4 in Poppins |
-| Punctuation `. , : ; ! ? ' " ‘ ’ “ ” - – — ( ) & / % # @ · … €` | e.g. the `?` in "What do we mean by self-learning?" falls back | Wrap punctuation in a Poppins span, or rephrase titles |
-| Accents `é è ê ë á à ä â í ì ï î ó ò ö ô ú ù ü û ç ñ` | "Univé" falls back on the `é` | Avoid in display text for now |
 | `kern` | No pair kerning; a few pairs (La, Te, th) are loose or tight | Acceptable at display sizes; tune per heading with `letter-spacing` if needed |
+| Figure tendrils | The 4 and 7 carry a tendril that may reach into the next figure | Fine for big numbers; for long numbers (phone, dates in running text) use Poppins |
 
 Test lines from §4.4 that work fully today: *Fabian Langer · FABIAN LANGER · Fabian · From strategy to solutions · Not everything that adapts learns · Services · Recent work*.
 
@@ -110,6 +108,6 @@ The style guide turns the font's logic into rules for the site's SVG drawings (�
 
 ## 6. Possible follow-ups
 
-1. Font v1.6: figures, punctuation, accents and `kern` (same pipeline: draw sheets → `scripts/prepare_glyphs.py` → `scripts/build_font.py`).
+1. ~~Font v1.6: figures, punctuation, accents~~ (done, 2026-11-08). Still open: `kern`.
 2. Centre-line SVGs for the wordmark and sign-off (for a draw-on animation).
 3. An ornament kit in the style (corner, divider, arch, vine segment) as `*-line.svg` + `*-outline.svg` pairs, following the style guide.

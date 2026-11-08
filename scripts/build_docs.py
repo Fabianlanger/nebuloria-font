@@ -4,12 +4,13 @@ Usage: python scripts/build_docs.py
   - fills the image credits into docs/book/design-book.html (<!-- CREDITS-TABLE -->)
   - prints docs/book/design-book.html  -> docs/Nebuloria-Design-Book.pdf
   - prints docs/style-guide/style-guide.html -> docs/Nebuloria-Style-Guide.pdf
-Requires Microsoft Edge (Chromium) for headless printing.
+Requires Microsoft Edge or another Chromium (set $CHROME) for headless printing.
 """
 from __future__ import annotations
 
 import html
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -27,13 +28,17 @@ DOCS = [
 
 
 def edge() -> Path:
+    """Microsoft Edge on Windows; any Chromium elsewhere (or the browser named in $CHROME)."""
     for p in EDGE_CANDIDATES:
         if p.is_file():
             return p
-    found = shutil.which("msedge")
-    if not found:
-        raise FileNotFoundError("Microsoft Edge not found; needed for headless PDF printing")
-    return Path(found)
+    if os.environ.get("CHROME") and Path(os.environ["CHROME"]).is_file():
+        return Path(os.environ["CHROME"])
+    for name in ("msedge", "chromium", "chromium-browser", "google-chrome", "chrome"):
+        found = shutil.which(name)
+        if found:
+            return Path(found)
+    raise FileNotFoundError("No Edge or Chromium found for headless PDF printing (set $CHROME to its path)")
 
 
 def credits_table() -> str:
@@ -62,7 +67,7 @@ def print_pdf(src: Path, pdf: Path) -> None:
     page = prepare(src)
     tmp = pdf.with_suffix(".tmp.pdf")
     tmp.unlink(missing_ok=True)
-    cmd = [str(edge()), "--headless=new", "--disable-gpu", "--allow-file-access-from-files",
+    cmd = [str(edge()), "--headless=new", "--disable-gpu", "--no-sandbox", "--allow-file-access-from-files",
            "--no-pdf-header-footer", "--virtual-time-budget=15000",
            f"--print-to-pdf={tmp}", page.as_uri()]
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=180)

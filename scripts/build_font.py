@@ -27,16 +27,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 from clean_svg import read_paths  # noqa: E402
 from vectorize import trace  # noqa: E402
 from ligatures import build_extras  # noqa: E402
+from derived import derive  # noqa: E402
+from fontTools.agl import UV2AGL
 from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 
 FAMILY = "Nebuloria"
 STYLE = "Regular"
-VERSION = "1.500"
+VERSION = "1.600"
 UPM = 1000
 X_HEIGHT = 500
 CAP_HEIGHT = 700
 SIDEBEARING = {"lower": 65, "upper": 85}  # units each side of the spacing body
 SPACE_WIDTH = 260
+FIGURE_EXTRA = 45   # figures carry tendrils and leaves on both sides: a little more room than capitals
 TRACE_SCALE = 3
 OPEN_RIGHT = "LK"   # capitals whose open right side would be mistaken for the wire gap
 
@@ -134,8 +137,11 @@ def squeeze_x(rec: RecordingPen, g0: float, g1: float, target: float) -> tuple[R
 
 # ---------------------------------------------------------------- glyphs
 def glyph_name(ch: str) -> str:
-    """a-z, A-Z keep their name; a traced pair 'La' becomes the ligature 'L_a.dlig'."""
-    return ch if len(ch) == 1 else "_".join(ch) + ".dlig"
+    """a-z, A-Z keep their name, figures and marks get their standard name ('zero', 'question');
+    a traced pair 'La' becomes the ligature 'L_a.dlig'."""
+    if len(ch) > 1:
+        return "_".join(ch) + ".dlig"
+    return ch if ch.isascii() and ch.isalpha() else UV2AGL.get(ord(ch), f"uni{ord(ch):04X}")
 
 
 def load_glyph(crop: Path, meta: dict, ch: str, work: Path) -> Glyph:
@@ -156,7 +162,7 @@ def load_glyph(crop: Path, meta: dict, ch: str, work: Path) -> Glyph:
     # space from the heavy core, so hairline tails and tendrils may overhang (as in Langer)
     core_x0 = (info.get("core_x0", info["x0"]) - info["crop_x"]) * k
     core_x1 = (info.get("core_x1", info["x1"]) - info["crop_x"]) * k
-    sb = SIDEBEARING[meta["kind"]]
+    sb = SIDEBEARING[meta["kind"]] + (FIGURE_EXTRA if ch.isdigit() else 0)
     placed = RecordingPen()
     units.replay(TransformPen(placed, (1, 0, 0, 1, sb - core_x0, 0)))
     advance = round(core_x1 - core_x0 + 2 * sb)
@@ -211,7 +217,9 @@ def build(glyphs: list[Glyph], out_dir: Path, hekwerk: bool = False,
         raise ValueError("no glyphs to build")
     traced_ligs = [g for g in glyphs if len(g.char) > 1]
     glyphs = [g for g in glyphs if len(g.char) == 1]
-    extras, fea = build_extras(glyphs, SIDEBEARING["lower"], X_HEIGHT, CAP_HEIGHT, traced_ligs,
+    glyphs += derive(glyphs, Glyph, X_HEIGHT, CAP_HEIGHT)   # v1.6: accented letters, dashes, ellipsis
+    letters = [g for g in glyphs if g.char.isalpha()]       # windows and wires only between letters
+    extras, fea = build_extras(letters, SIDEBEARING["lower"], X_HEIGHT, CAP_HEIGHT, traced_ligs,
                                fence=hekwerk, overlays=load_overlays(wire_dir))
     family = f"{FAMILY} Hekwerk" if hekwerk else FAMILY
     stem = "nebuloria-hekwerk-regular" if hekwerk else "nebuloria-regular"
