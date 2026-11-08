@@ -18,7 +18,7 @@ Download the **newest** version. At the time of writing that is **v1.5**; newer 
 
 Click **[⬇ Nebuloria-v1.5.zip](dist/Nebuloria-v1.5.zip)**. On the page that opens, click the **download button** (the small arrow pointing down, on the right):
 
-![Click the download button on the right](docs/img/how-to-download.png)
+![Click the download button on the right](docs/img/download-button.png)
 
 Then unzip it: double-click the file (Mac) or right-click → **Extract all** (Windows).
 
