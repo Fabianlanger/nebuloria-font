@@ -2,7 +2,7 @@
 
 Box   = a Nebuloria "window": 45-degree chamfered frame, hairline inner frame, three glare lines.
 Arrow = a hanging liana: starts in a small teardrop, swells, tapers to a needle point.
-Label = plain regular text.
+Label = set in Nebuloria itself.
 
 Usage: python scripts/annotate_download.py <screenshot.png> <out.png> x0 y0 x1 y1 "Label" --label-at x y
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 COLOR = (249, 200, 82)       # Nebuloria yellow
-FONT = r"C:\Windows\Fonts\segoeui.ttf"   # regular weight
+FONT = str(Path(__file__).resolve().parent.parent / "dist" / "nebuloria-regular.otf")   # our own typeface
 SS = 4                       # supersampling for smooth hairlines
 
 
