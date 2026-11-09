@@ -14,11 +14,9 @@ Heavy strokes carry hair-thin tendrils, corners are cut at 45°, small leaves gr
 
 ### 1. Download
 
-Download the **newest** version. At the time of writing that is **v1.6**.
+**[⬇ Download Nebuloria](https://github.com/Fabianlanger/nebuloria-font/releases/latest/download/Nebuloria.zip)**
 
-Click **[⬇ Nebuloria-v1.6.zip](dist/Nebuloria-v1.6.zip)**. On the page that opens, click the **download button** (the small arrow pointing down, on the right):
-
-![Click the download button on the right](docs/img/download-button-v2.png)
+This link always gives you the newest version, and the download starts right away. Older versions are on the [releases page](https://github.com/Fabianlanger/nebuloria-font/releases).
 
 Then unzip it: double-click the file (Mac) or right-click → **Extract all** (Windows).
 
@@ -128,6 +126,7 @@ pip install fonttools brotli vtracer pillow numpy scipy
 python scripts/prepare_glyphs.py         # cut and trace all drawings into build/glyphs + build/wires
 python scripts/build_font.py --hekwerk   # dist/*.otf, *.woff2 (both styles)
 python scripts/build_docs.py             # docs/*.pdf (Microsoft Edge, or any Chromium via $CHROME)
+python scripts/package_release.py       # build/release/Nebuloria.zip, to upload to a GitHub Release
 ```
 
 | Script | Role |
@@ -142,8 +141,10 @@ python scripts/build_docs.py             # docs/*.pdf (Microsoft Edge, or any Ch
 | `scripts/export_svg.py` | Exports words and components as clean SVG |
 | `scripts/cover_grade.py` | Colour-grades the cover photographs |
 | `scripts/build_docs.py` | Prints the design book and style guide to PDF |
+| `scripts/package_release.py` | Packs `Nebuloria.zip` for a GitHub Release |
+| `scripts/tools/` | One-off helpers (image credits search, screenshot annotation) |
 
-Glyph drawings live in `assets/sheets/`, the prompts that produced them in `briefs/`. Sheets of figures, signs and accents (v1.6) start with a ruler letter (H or n): it gives the baseline and height and is not built.
+Glyph drawings live in `assets/sheets/`, the prompts that produced them in `briefs/`. `assets/history/` keeps the design story (early renders, rejected covers, every earlier font version with a viewer); the build never reads from it. Sheets of figures, signs and accents (v1.6) start with a ruler letter (H or n): it gives the baseline and height and is not built.
 
 ---
 

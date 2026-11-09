@@ -8,3 +8,6 @@ docs/book/*.print.html
 # NOT licensed for redistribution. Kept locally only.
 inspiration/
 *.tmp.pdf
+
+# release downloads live on GitHub Releases, not in the repo
+dist/*.zip

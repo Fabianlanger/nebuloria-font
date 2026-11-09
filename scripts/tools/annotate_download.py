@@ -16,7 +16,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 COLOR = (249, 200, 82)       # Nebuloria yellow
-FONT = str(Path(__file__).resolve().parent.parent / "dist" / "nebuloria-regular.otf")   # our own typeface
+FONT = str(Path(__file__).resolve().parents[2] / "dist" / "nebuloria-regular.otf")   # our own typeface
 SS = 4                       # supersampling for smooth hairlines
 
 

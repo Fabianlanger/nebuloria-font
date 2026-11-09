@@ -4,7 +4,7 @@ Usage: python scripts/export_svg.py <font.otf> "<glyph names>" <out.svg> [--heig
   glyph names are space separated; use "|" for a word space.
   e.g. "F_a.dlig window b i a n | L_a.dlig window n_g.dlig e_r.dlig"
 
-Output (FONT-HANDOVER §4.1): filled outlines, tight viewBox, no transforms,
+Output: filled outlines, tight viewBox, no transforms,
 no embedded fonts, fill="currentColor".
 """
 from __future__ import annotations
